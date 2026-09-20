@@ -7,7 +7,7 @@
     <title>Learn • Know • Grow | Online Magazine</title>
 
     <meta name="description"
-          content="Learn • Know • Grow — News, English Learning, Technology, AI, Motivation, Health and Knowledge.">
+          content="Learn • Know • Grow — News, English Learning, Technology, AI, Islamic Learning, Motivation, Health, Skills and Knowledge.">
 
     <style>
 
@@ -725,6 +725,86 @@
             }
         }
 
+    
+        .category-card { display:block; color:inherit; cursor:pointer; }
+        .category-card small { display:block; margin-top:8px; color:#088395; font-weight:bold; }
+
+        .topic-intro {
+            background: linear-gradient(135deg,#eef8ff,#ffffff);
+            border-left: 5px solid #088395;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+        }
+
+        .topic-list {
+            display:grid;
+            grid-template-columns:repeat(2,1fr);
+            gap:16px;
+            margin-top:20px;
+        }
+
+        .topic-item {
+            background:#f8fbff;
+            padding:18px;
+            border-radius:12px;
+            border:1px solid #e5edf7;
+        }
+
+        .topic-item h4 { color:#071952; margin-bottom:6px; }
+        .topic-item p { color:#555; font-size:15px; }
+
+        .islamic-box {
+            background:linear-gradient(135deg,#f7fff9,#ffffff);
+            border-left:5px solid #198754;
+            padding:25px;
+            border-radius:14px;
+            box-shadow:0 5px 18px rgba(0,0,0,.06);
+            margin-bottom:22px;
+        }
+
+        .islamic-box h3 { color:#075b3d; margin-bottom:10px; }
+        .arabic {
+            font-size:25px;
+            line-height:2;
+            text-align:center;
+            margin:15px 0;
+            color:#075b3d;
+        }
+
+        .section-actions { text-align:center; margin-top:25px; }
+        .section-actions a {
+            display:inline-block;
+            background:#088395;
+            color:white;
+            padding:10px 18px;
+            border-radius:8px;
+            font-weight:bold;
+            margin:4px;
+        }
+
+        .article-card .article-content ul {
+            margin:10px 0 0 20px;
+            color:#555;
+        }
+
+        body.dark .topic-intro,
+        body.dark .topic-item,
+        body.dark .islamic-box {
+            background:#192231;
+            color:#eee;
+        }
+
+        body.dark .topic-item h4,
+        body.dark .islamic-box h3 { color:#fff; }
+
+        body.dark .topic-item p,
+        body.dark .article-card .article-content ul { color:#c5ccd8; }
+
+        @media (max-width:600px) {
+            .topic-list { grid-template-columns:1fr; }
+        }
+
     </style>
 </head>
 
@@ -749,10 +829,13 @@
             <a href="#home">Home</a>
             <a href="#news">News</a>
             <a href="#technology">Technology</a>
+            <a href="#ai">🤖 AI</a>
+            <a href="#islamic">🕌 Islamic</a>
             <a href="#english">English</a>
             <a href="#motivation">Motivation</a>
             <a href="#health">Health</a>
             <a href="#learning">Learning</a>
+            <a href="#knowledge">Knowledge</a>
             <a href="#contact">Contact</a>
 
         </nav>
@@ -794,8 +877,8 @@
             <p>
                 প্রতিদিন নতুন কিছু জানুন, নতুন কিছু শিখুন এবং
                 নিজের দক্ষতাকে আরও উন্নত করুন। এখানে থাকছে
-                News, Technology, AI, English Learning,
-                Motivation, Health এবং বিভিন্ন গুরুত্বপূর্ণ জ্ঞান।
+                News, Technology, AI, Islamic Learning, English,
+                Motivation, Health, Skills এবং বিভিন্ন গুরুত্বপূর্ণ জ্ঞান।
             </p>
 
             <div class="hero-buttons">
@@ -842,127 +925,79 @@
     <div class="container">
 
         <div class="section-title">
-
-            <h2>Explore Our Topics</h2>
-
-            <p>
-                আপনার প্রয়োজন অনুযায়ী একটি বিষয় বেছে নিন
-            </p>
-
+            <h2>🌟 Explore Our Topics</h2>
+            <p>একটি বিষয় নির্বাচন করুন এবং বিস্তারিত লেখা, শেখার উপকরণ ও তথ্য দেখুন</p>
         </div>
-
 
         <div class="categories">
 
-            <div class="category-card">
-
+            <a href="#news" class="category-card">
                 <div class="category-icon">📰</div>
-
                 <h3>Latest News</h3>
+                <p>সাম্প্রতিক ও গুরুত্বপূর্ণ খবর, ব্যাখ্যা ও তথ্য</p>
+                <small>Open News →</small>
+            </a>
 
-                <p>
-                    গুরুত্বপূর্ণ ও আকর্ষণীয় সাম্প্রতিক খবর
-                </p>
-
-            </div>
-
-
-            <div class="category-card">
-
+            <a href="#technology" class="category-card">
                 <div class="category-icon">💻</div>
-
                 <h3>Technology</h3>
+                <p>Computer, Internet, Digital World ও আধুনিক প্রযুক্তি</p>
+                <small>Explore Technology →</small>
+            </a>
 
-                <p>
-                    Computer, Internet ও নতুন প্রযুক্তি
-                </p>
-
-            </div>
-
-
-            <div class="category-card">
-
+            <a href="#ai" class="category-card">
                 <div class="category-icon">🤖</div>
-
                 <h3>AI & Future</h3>
+                <p>AI কী, কীভাবে কাজ করে, ব্যবহার ও ভবিষ্যৎ সম্ভাবনা</p>
+                <small>Learn AI →</small>
+            </a>
 
-                <p>
-                    Artificial Intelligence ও ভবিষ্যৎ প্রযুক্তি
-                </p>
+            <a href="#islamic" class="category-card">
+                <div class="category-icon">🕌</div>
+                <h3>Islamic</h3>
+                <p>কুরআন, হাদিস, দোয়া, আমল ও ইসলামী জীবনযাপনের শিক্ষা</p>
+                <small>Read Islamic →</small>
+            </a>
 
-            </div>
-
-
-            <div class="category-card">
-
+            <a href="#english" class="category-card">
                 <div class="category-icon">🇬🇧</div>
-
                 <h3>English Learning</h3>
+                <p>Vocabulary, Grammar, Speaking ও দৈনন্দিন English</p>
+                <small>Start English →</small>
+            </a>
 
-                <p>
-                    সহজভাবে English শেখার উপায়
-                </p>
-
-            </div>
-
-
-            <div class="category-card">
-
+            <a href="#motivation" class="category-card">
                 <div class="category-icon">💪</div>
-
                 <h3>Motivation</h3>
+                <p>লক্ষ্য, আত্মউন্নয়ন, discipline ও positive mindset</p>
+                <small>Get Inspired →</small>
+            </a>
 
-                <p>
-                    নিজেকে এগিয়ে নেওয়ার অনুপ্রেরণা
-                </p>
-
-            </div>
-
-
-            <div class="category-card">
-
+            <a href="#health" class="category-card">
                 <div class="category-icon">🍎</div>
-
                 <h3>Health & Food</h3>
+                <p>খাবার, পুষ্টি, স্বাস্থ্যকর অভ্যাস ও সচেতনতা</p>
+                <small>Read Health →</small>
+            </a>
 
-                <p>
-                    স্বাস্থ্য ও পুষ্টি বিষয়ক তথ্য
-                </p>
-
-            </div>
-
-
-            <div class="category-card">
-
+            <a href="#learning" class="category-card">
                 <div class="category-icon">📚</div>
-
                 <h3>Learning & Skills</h3>
+                <p>Computer, Excel, Typing ও কাজের প্রয়োজনীয় skill</p>
+                <small>Start Learning →</small>
+            </a>
 
-                <p>
-                    নতুন skill শেখার সহজ নির্দেশনা
-                </p>
-
-            </div>
-
-
-            <div class="category-card">
-
+            <a href="#knowledge" class="category-card">
                 <div class="category-icon">🧠</div>
-
                 <h3>Knowledge</h3>
-
-                <p>
-                    General Knowledge ও interesting facts
-                </p>
-
-            </div>
+                <p>বিজ্ঞান, পৃথিবী, ইতিহাস ও interesting facts</p>
+                <small>Discover More →</small>
+            </a>
 
         </div>
-
     </div>
 
 </section>
-
 
 
 <!-- =========================
@@ -1318,80 +1353,118 @@
     <div class="container">
 
         <div class="section-title">
-
-            <h2>💻 Technology & AI</h2>
-
-            <p>
-                আধুনিক প্রযুক্তি সম্পর্কে সহজভাবে জানুন
-            </p>
-
+            <h2>💻 Technology</h2>
+            <p>আধুনিক প্রযুক্তি সহজ ভাষায় বুঝুন এবং ব্যবহার শিখুন</p>
         </div>
 
+        <div class="topic-intro">
+            <h3>🌐 প্রযুক্তি কেন গুরুত্বপূর্ণ?</h3>
+            <p>
+                আজকের পৃথিবীতে Computer, Smartphone, Internet, Cloud, Cyber Security
+                এবং Digital Services আমাদের দৈনন্দিন জীবন ও কাজের সঙ্গে যুক্ত। এখানে
+                beginner-friendly ভাষায় প্রযুক্তির প্রয়োজনীয় বিষয়গুলো ধাপে ধাপে
+                শেখানো হবে।
+            </p>
+        </div>
 
         <div class="article-grid">
 
-            <div class="article-card">
-
-                <div class="article-img">
-                    🤖
-                </div>
-
+            <article class="article-card">
+                <div class="article-img">💻</div>
                 <div class="article-content">
-
-                    <h3>Artificial Intelligence</h3>
-
-                    <p>
-                        AI মানুষের মতো তথ্য বিশ্লেষণ, শেখা,
-                        সিদ্ধান্তে সহায়তা এবং বিভিন্ন কাজ
-                        সম্পন্ন করার প্রযুক্তি।
-                    </p>
-
+                    <h3>Computer Basics</h3>
+                    <p>Computer কী, hardware ও software কী এবং beginner হিসেবে কোথা থেকে শেখা শুরু করবেন।</p>
+                    <ul>
+                        <li>Keyboard & Mouse</li>
+                        <li>Windows basics</li>
+                        <li>Files & folders</li>
+                    </ul>
                 </div>
+            </article>
 
-            </div>
-
-
-            <div class="article-card">
-
-                <div class="article-img">
-                    💻
-                </div>
-
+            <article class="article-card">
+                <div class="article-img">🌐</div>
                 <div class="article-content">
-
-                    <h3>Computer Skills</h3>
-
-                    <p>
-                        Microsoft Word, Excel, Internet,
-                        typing এবং basic computer skills
-                        ধাপে ধাপে শেখার সুযোগ।
-                    </p>
-
+                    <h3>Internet & Web</h3>
+                    <p>Browser, search engine, website, domain, hosting ও online services সম্পর্কে সহজ ধারণা।</p>
+                    <ul>
+                        <li>Safe browsing</li>
+                        <li>Useful websites</li>
+                        <li>Online tools</li>
+                    </ul>
                 </div>
+            </article>
 
-            </div>
-
-
-            <div class="article-card">
-
-                <div class="article-img">
-                    🌐
-                </div>
-
+            <article class="article-card">
+                <div class="article-img">🔐</div>
                 <div class="article-content">
-
-                    <h3>Internet & Digital World</h3>
-
-                    <p>
-                        Internet, website, online tools এবং
-                        digital world সম্পর্কে প্রয়োজনীয়
-                        ধারণা।
-                    </p>
-
+                    <h3>Cyber Safety</h3>
+                    <p>Password, phishing, scam link ও personal information নিরাপদ রাখার মৌলিক নিয়ম।</p>
+                    <ul>
+                        <li>Strong passwords</li>
+                        <li>2-step verification</li>
+                        <li>Suspicious links চিনুন</li>
+                    </ul>
                 </div>
+            </article>
 
-            </div>
+        </div>
+    </div>
+</section>
 
+<section id="ai">
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>🤖 Artificial Intelligence & Future</h2>
+            <p>AI কী, কোথায় ব্যবহার হয় এবং ভবিষ্যতের skill কী হতে পারে</p>
+        </div>
+
+        <div class="article-grid">
+
+            <article class="article-card">
+                <div class="article-img">🤖</div>
+                <div class="article-content">
+                    <h3>AI কী?</h3>
+                    <p>
+                        Artificial Intelligence এমন প্রযুক্তি যা তথ্য বিশ্লেষণ,
+                        pattern বোঝা, ভাষা নিয়ে কাজ করা এবং বিভিন্ন কাজে মানুষের
+                        সিদ্ধান্তকে সহায়তা করতে পারে।
+                    </p>
+                    <a href="#ai" class="read-more">AI বিষয়ক আরও পড়ুন →</a>
+                </div>
+            </article>
+
+            <article class="article-card">
+                <div class="article-img">🧠</div>
+                <div class="article-content">
+                    <h3>AI দিয়ে কী শেখা যায়?</h3>
+                    <p>
+                        Writing, learning, research, brainstorming, translation,
+                        coding ও productivity-এর মতো কাজে AI tools ব্যবহার করা যায়।
+                    </p>
+                    <a href="#learning" class="read-more">Learning Skills দেখুন →</a>
+                </div>
+            </article>
+
+            <article class="article-card">
+                <div class="article-img">🚀</div>
+                <div class="article-content">
+                    <h3>Future Skills</h3>
+                    <p>
+                        Digital literacy, communication, problem solving, data skills
+                        এবং AI literacy ভবিষ্যৎ কাজের জগতে গুরুত্বপূর্ণ হতে পারে।
+                    </p>
+                    <a href="#learning" class="read-more">Skills শেখা শুরু করুন →</a>
+                </div>
+            </article>
+
+        </div>
+
+        <div class="section-actions">
+            <a href="#technology">← Technology</a>
+            <a href="#learning">📚 Learning Skills</a>
         </div>
 
     </div>
@@ -1399,6 +1472,91 @@
 </section>
 
 
+<!-- =========================
+     ISLAMIC
+========================= -->
+
+<section id="islamic">
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>🕌 Islamic Learning</h2>
+            <p>কুরআন, হাদিস, দোয়া ও সুন্দর জীবনযাপনের ইসলামী শিক্ষা</p>
+        </div>
+
+        <div class="islamic-box">
+            <h3>📖 কুরআনের শিক্ষা</h3>
+            <p>
+                কুরআনের আয়াতের অর্থ ও শিক্ষা সহজ ভাষায় বোঝার চেষ্টা করা হবে।
+                প্রতিটি ধর্মীয় বিষয় প্রকাশের সময় নির্ভরযোগ্য উৎস ও সঠিক রেফারেন্স
+                দেওয়া গুরুত্বপূর্ণ।
+            </p>
+        </div>
+
+        <div class="article-grid">
+
+            <article class="article-card">
+                <div class="article-img">📖</div>
+                <div class="article-content">
+                    <h3>কুরআন ও জীবন</h3>
+                    <p>সততা, ধৈর্য, দয়া, দায়িত্ববোধ ও ভালো চরিত্র নিয়ে ইসলামী শিক্ষার সহজ আলোচনা।</p>
+                    <a href="#islamic" class="read-more">আরও পড়ুন →</a>
+                </div>
+            </article>
+
+            <article class="article-card">
+                <div class="article-img">🤲</div>
+                <div class="article-content">
+                    <h3>দোয়া ও আমল</h3>
+                    <p>দৈনন্দিন জীবনের প্রয়োজনীয় দোয়া ও আমল সম্পর্কে জানুন এবং রেফারেন্সসহ পড়ুন।</p>
+                    <a href="#islamic" class="read-more">দোয়া বিভাগ →</a>
+                </div>
+            </article>
+
+            <article class="article-card">
+                <div class="article-img">🕋</div>
+                <div class="article-content">
+                    <h3>হাদিস ও আখলাক</h3>
+                    <p>সুন্দর চরিত্র, মানুষের অধিকার, পরিবার ও সমাজে ভালো আচরণ নিয়ে ইসলামী শিক্ষা।</p>
+                    <a href="#islamic" class="read-more">আখলাক বিভাগ →</a>
+                </div>
+            </article>
+
+        </div>
+
+        <div class="topic-list">
+
+            <div class="topic-item">
+                <h4>🕌 নামাজ ও ইবাদত</h4>
+                <p>ইবাদতের গুরুত্ব, সময়ের মূল্য ও নিয়মিত ভালো কাজের অভ্যাস সম্পর্কে শিক্ষামূলক লেখা।</p>
+            </div>
+
+            <div class="topic-item">
+                <h4>🌙 রমজান ও সিয়াম</h4>
+                <p>রমজানের শিক্ষা, আত্মসংযম, দান ও সামাজিক দায়িত্ব নিয়ে তথ্যভিত্তিক আলোচনা।</p>
+            </div>
+
+            <div class="topic-item">
+                <h4>❤️ পরিবার ও সম্পর্ক</h4>
+                <p>পিতা-মাতা, পরিবার, প্রতিবেশী ও মানুষের সঙ্গে উত্তম আচরণের ইসলামী শিক্ষা।</p>
+            </div>
+
+            <div class="topic-item">
+                <h4>🌿 সুন্দর জীবন</h4>
+                <p>সততা, ধৈর্য, কৃতজ্ঞতা, ক্ষমা ও মানুষের উপকার করার মতো মূল্যবোধ নিয়ে আলোচনা।</p>
+            </div>
+
+        </div>
+
+        <div class="section-actions">
+            <a href="#home">↑ Home</a>
+            <a href="#news">📰 News</a>
+        </div>
+
+    </div>
+
+</section>
 
 <!-- =========================
      ENGLISH
@@ -1409,55 +1567,55 @@
     <div class="container">
 
         <div class="section-title">
-
             <h2>🇬🇧 English Learning</h2>
-
-            <p>
-                প্রতিদিন একটি নতুন English word শিখুন
-            </p>
-
+            <p>Vocabulary থেকে Speaking—সহজভাবে ধাপে ধাপে English শেখা</p>
         </div>
-
 
         <div class="english-box">
-
-            <div class="word">
-                Consistent
-            </div>
-
-            <div class="meaning">
-                Meaning: নিয়মিত / ধারাবাহিক
-            </div>
-
-            <p>
-                <strong>Synonyms:</strong>
-                Regular, Steady, Continuous
-            </p>
-
-
+            <div class="word">Consistent</div>
+            <div class="meaning">Meaning: নিয়মিত / ধারাবাহিক</div>
+            <p><strong>Synonyms:</strong> Regular, Steady, Continuous</p>
             <div class="example">
-
-                <strong>Example:</strong>
-
-                <br>
-
-                If you are consistent,
-                you can improve your English.
-                
+                <strong>Example:</strong><br>
+                If you are consistent, you can improve your English.
                 <br><br>
-
-                <b>বাংলা:</b>
-                তুমি যদি নিয়মিত চেষ্টা করো,
-                তাহলে তোমার English উন্নত করতে পারবে।
-
+                <b>বাংলা:</b> তুমি যদি নিয়মিত চেষ্টা করো, তাহলে তোমার English উন্নত করতে পারবে।
             </div>
-
         </div>
 
+        <div class="article-grid" style="margin-top:22px;">
+
+            <article class="article-card">
+                <div class="article-img">📝</div>
+                <div class="article-content">
+                    <h3>Vocabulary</h3>
+                    <p>প্রতিদিন নতুন শব্দ, বাংলা অর্থ, synonym এবং example sentence শেখার ব্যবস্থা।</p>
+                    <a href="#english" class="read-more">Vocabulary পড়ুন →</a>
+                </div>
+            </article>
+
+            <article class="article-card">
+                <div class="article-img">🗣️</div>
+                <div class="article-content">
+                    <h3>Speaking</h3>
+                    <p>Daily conversation, common questions ও সহজ sentence দিয়ে speaking practice।</p>
+                    <a href="#english" class="read-more">Speaking practice →</a>
+                </div>
+            </article>
+
+            <article class="article-card">
+                <div class="article-img">✍️</div>
+                <div class="article-content">
+                    <h3>Grammar & Writing</h3>
+                    <p>Tense, sentence structure, common mistakes ও basic writing সহজভাবে শেখা।</p>
+                    <a href="#english" class="read-more">Grammar শেখা →</a>
+                </div>
+            </article>
+
+        </div>
     </div>
 
 </section>
-
 
 
 <!-- =========================
@@ -1469,36 +1627,43 @@
     <div class="container">
 
         <div class="section-title">
-
-            <h2>💪 Motivation</h2>
-
-            <p>
-                প্রতিদিন নিজেকে একটু একটু করে উন্নত করুন
-            </p>
-
+            <h2>💪 Motivation & Personal Growth</h2>
+            <p>লক্ষ্য ঠিক করুন, discipline গড়ুন এবং প্রতিদিন এগিয়ে যান</p>
         </div>
-
 
         <div class="motivation-box">
-
             <div class="quote">
-
-                “You do not have to be perfect.
-                You just have to keep moving forward.”
-
+                “You do not have to be perfect. You just have to keep moving forward.”
             </div>
-
-            <p>
-                সফলতা একদিনে আসে না।
-                ছোট ছোট নিয়মিত চেষ্টা একসময় বড় পরিবর্তন তৈরি করে।
-            </p>
-
+            <p>সফলতা একদিনে আসে না। ছোট ছোট নিয়মিত চেষ্টা একসময় বড় পরিবর্তন তৈরি করে।</p>
         </div>
 
+        <div class="topic-list" style="margin-top:22px;">
+
+            <div class="topic-item">
+                <h4>🎯 Goal Setting</h4>
+                <p>বড় লক্ষ্যকে ছোট ছোট কাজের মধ্যে ভাগ করে এগিয়ে যাওয়ার পদ্ধতি।</p>
+            </div>
+
+            <div class="topic-item">
+                <h4>⏳ Discipline</h4>
+                <p>Motivation সবসময় থাকবে না—তাই নিয়মিত কাজ করার অভ্যাস তৈরি করা গুরুত্বপূর্ণ।</p>
+            </div>
+
+            <div class="topic-item">
+                <h4>🌱 Self Improvement</h4>
+                <p>প্রতিদিন সামান্য উন্নতি করার মাধ্যমে দীর্ঘমেয়াদে বড় পরিবর্তন আনার ধারণা।</p>
+            </div>
+
+            <div class="topic-item">
+                <h4>💡 Positive Mindset</h4>
+                <p>সমস্যা থেকে শেখা, ভুল থেকে শিক্ষা নেওয়া এবং বাস্তবসম্মতভাবে সামনে এগোনো।</p>
+            </div>
+
+        </div>
     </div>
 
 </section>
-
 
 
 <!-- =========================
@@ -1510,72 +1675,65 @@
     <div class="container">
 
         <div class="section-title">
-
-            <h2>📚 Learn Something Today</h2>
-
-            <p>
-                প্রতিদিনের ছোট ছোট শেখা
-            </p>
-
+            <h2>📚 Learning & Skills</h2>
+            <p>চাকরি ও দৈনন্দিন জীবনে কাজে লাগে এমন practical skill</p>
         </div>
-
 
         <div class="daily-grid">
 
-
             <div class="daily-card">
-
-                <h3>💡 Today's Tip</h3>
-
-                <p>
-                    প্রতিদিন অন্তত ২০–৩০ মিনিট নতুন
-                    কোনো skill শেখার চেষ্টা করুন।
-                </p>
-
+                <h3>💻 Computer</h3>
+                <p>Windows, files/folders, software installation, internet ও basic troubleshooting।</p>
             </div>
 
-
             <div class="daily-card">
-
-                <h3>⌨️ Computer</h3>
-
-                <p>
-                    Keyboard shortcut শেখা computer
-                    কাজের গতি বাড়াতে সাহায্য করতে পারে।
-                </p>
-
+                <h3>📊 Excel</h3>
+                <p>SUM থেকে শুরু করে formulas, sorting, filtering, tables ও practical data entry।</p>
             </div>
 
-
             <div class="daily-card">
-
-                <h3>📖 English</h3>
-
-                <p>
-                    প্রতিদিন ৫টি নতুন English word শিখুন
-                    এবং প্রতিটি দিয়ে একটি sentence তৈরি করুন।
-                </p>
-
+                <h3>⌨️ Typing</h3>
+                <p>Keyboard practice, typing accuracy ও speed বাড়ানোর সহজ নিয়ম।</p>
             </div>
 
-
             <div class="daily-card">
-
-                <h3>🧠 Knowledge</h3>
-
-                <p>
-                    প্রতিদিন একটি নতুন বিষয় সম্পর্কে
-                    জানার অভ্যাস করুন।
-                </p>
-
+                <h3>🎨 Photoshop</h3>
+                <p>Basic photo editing, crop, resize, background ও simple design শেখার ধাপ।</p>
             </div>
+
+        </div>
+
+        <div class="article-grid" style="margin-top:22px;">
+
+            <article class="article-card">
+                <div class="article-img">🧾</div>
+                <div class="article-content">
+                    <h3>Data Entry</h3>
+                    <p>Data entry operator-এর কাজ, Excel ব্যবহার, accuracy ও office workflow সম্পর্কে beginner guide।</p>
+                </div>
+            </article>
+
+            <article class="article-card">
+                <div class="article-img">🧑‍💻</div>
+                <div class="article-content">
+                    <h3>Job Skills</h3>
+                    <p>CV, interview, communication, computer skill ও workplace professionalism নিয়ে শেখার উপকরণ।</p>
+                </div>
+            </article>
+
+            <article class="article-card">
+                <div class="article-img">🚀</div>
+                <div class="article-content">
+                    <h3>Learn Step by Step</h3>
+                    <p>একসঙ্গে সব নয়—একটি skill বেছে নিয়ে beginner থেকে ধাপে ধাপে শেখার পরিকল্পনা।</p>
+                </div>
+            </article>
 
         </div>
 
     </div>
 
 </section>
-
 
 
 <!-- =========================
@@ -1688,33 +1846,46 @@
     <div class="container">
 
         <div class="section-title">
+            <h2>🧠 Knowledge Hub</h2>
+            <p>বিজ্ঞান, পৃথিবী, ইতিহাস, সংস্কৃতি ও interesting facts</p>
+        </div>
 
-            <h2>🧠 Did You Know?</h2>
+        <div class="article-grid">
 
-            <p>
-                প্রতিদিন একটি নতুন তথ্য
-            </p>
+            <article class="article-card">
+                <div class="article-img">🔬</div>
+                <div class="article-content">
+                    <h3>Science</h3>
+                    <p>দৈনন্দিন জীবনের বিজ্ঞান ও গুরুত্বপূর্ণ বৈজ্ঞানিক ধারণা সহজ ভাষায়।</p>
+                </div>
+            </article>
+
+            <article class="article-card">
+                <div class="article-img">🌍</div>
+                <div class="article-content">
+                    <h3>World</h3>
+                    <p>দেশ, শহর, সংস্কৃতি, ভূগোল ও পৃথিবী সম্পর্কে সাধারণ জ্ঞান।</p>
+                </div>
+            </article>
+
+            <article class="article-card">
+                <div class="article-img">🏛️</div>
+                <div class="article-content">
+                    <h3>History</h3>
+                    <p>ইতিহাসের গুরুত্বপূর্ণ ঘটনা ও মানুষের জীবন থেকে শেখার বিষয়।</p>
+                </div>
+            </article>
 
         </div>
 
-
-        <div class="motivation-box">
-
-            <div class="quote">
-                Knowledge grows when you keep learning.
-            </div>
-
-            <p>
-                প্রতিদিন শেখার অভ্যাস আপনার জ্ঞানকে
-                ধীরে ধীরে আরও সমৃদ্ধ করে।
-            </p>
-
+        <div class="motivation-box" style="margin-top:22px;">
+            <div class="quote">Knowledge grows when you keep learning.</div>
+            <p>প্রতিদিন শেখার অভ্যাস আপনার জ্ঞানকে ধীরে ধীরে আরও সমৃদ্ধ করে।</p>
         </div>
 
     </div>
 
 </section>
-
 
 
 <!-- =========================
