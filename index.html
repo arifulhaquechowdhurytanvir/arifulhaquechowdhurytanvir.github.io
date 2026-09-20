@@ -1,313 +1,1922 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="bn">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Ariful Haque Chowdhury Tanvir - Portfolio</title>
+    <title>Learn • Know • Grow | Online Magazine</title>
+
+    <meta name="description"
+          content="Learn • Know • Grow — News, English Learning, Technology, AI, Motivation, Health and Knowledge.">
 
     <style>
 
-        body {
-            font-family: Arial, sans-serif;
-            background-color: lightblue;
-            text-align: center;
+        /* =========================
+           GLOBAL
+        ========================== */
+
+        * {
             margin: 0;
-            padding: 30px;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, "Noto Sans Bengali", sans-serif;
+            background: #f4f7fb;
+            color: #222;
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: 92%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================== */
+
+        header {
+            background: linear-gradient(135deg, #071952, #088395);
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.15);
+        }
+
+        .header-inner {
+            min-height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .logo span {
+            color: #ffd166;
         }
 
         nav {
-            background-color: darkblue;
-            padding: 15px;
-            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
 
         nav a {
             color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 17px;
+            padding: 10px 12px;
+            border-radius: 7px;
+            font-size: 14px;
             font-weight: bold;
+            transition: 0.3s;
         }
 
         nav a:hover {
-            color: yellow;
+            background: rgba(255,255,255,0.15);
+            color: #ffd166;
         }
 
-        h1 {
-            color: darkblue;
+        .menu-btn,
+        .dark-btn {
+            border: none;
+            background: rgba(255,255,255,0.12);
+            color: white;
+            padding: 9px 12px;
+            border-radius: 7px;
+            cursor: pointer;
+            font-size: 18px;
         }
 
-        h2 {
-            color: darkgreen;
+        .menu-btn {
+            display: none;
         }
 
-        .section {
-            background-color: white;
-            max-width: 800px;
-            margin: 25px auto;
-            padding: 25px;
-            border-radius: 15px;
-            text-align: left;
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+            background:
+                linear-gradient(
+                    rgba(4, 20, 55, 0.85),
+                    rgba(4, 20, 55, 0.85)
+                ),
+                linear-gradient(135deg, #0b3d91, #00a896);
+
+            color: white;
+            padding: 80px 20px;
         }
 
-        .profile {
+        .hero-content {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 220px;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #ffd166;
+        }
+
+        .hero h2 {
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            max-width: 700px;
+            font-size: 18px;
+            color: #e8f1ff;
+        }
+
+        .hero-buttons {
+            margin-top: 25px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #ffd166;
+            color: #111;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            background: #ffbd3b;
+        }
+
+        .btn-light {
+            background: white;
+            color: #071952;
+        }
+
+        .btn-light:hover {
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================
+           PROFILE PHOTO
+        ========================== */
+
+        .creator-photo {
             text-align: center;
         }
 
-        .profile img {
-            width: 200px;
+        .creator-photo img {
+            width: 190px;
+            height: 190px;
+            object-fit: cover;
             border-radius: 50%;
+            border: 6px solid white;
+            margin: auto;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
         }
 
-        .contact {
+        .creator-photo p {
+            margin-top: 12px;
+            font-size: 14px;
+            color: #e7f1ff;
+        }
+
+
+        /* =========================
+           SECTION
+        ========================== */
+
+        section {
+            padding: 60px 0;
+        }
+
+        .section-title {
             text-align: center;
+            margin-bottom: 35px;
         }
 
-        ul {
-            line-height: 1.8;
+        .section-title h2 {
+            font-size: 32px;
+            color: #071952;
+            margin-bottom: 8px;
         }
 
-        .news-card {
-            background-color: #f5f5f5;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 15px;
-            border: 2px solid lightgray;
+        .section-title p {
+            color: #666;
         }
 
-        .news-card h3 {
-            color: darkblue;
+
+        /* =========================
+           CATEGORY CARDS
+        ========================== */
+
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
         }
 
-        .news-date {
-            color: gray;
+        .category-card {
+            background: white;
+            padding: 25px 15px;
+            border-radius: 14px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: 0.3s;
+            border: 1px solid #e8edf4;
+        }
+
+        .category-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+        }
+
+        .category-icon {
+            font-size: 38px;
+            margin-bottom: 8px;
+        }
+
+        .category-card h3 {
+            color: #071952;
+            margin-bottom: 5px;
+        }
+
+        .category-card p {
+            color: #666;
             font-size: 14px;
         }
 
-    </style>
 
+        /* =========================
+           FEATURED NEWS
+        ========================== */
+
+        .featured {
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 6px 25px rgba(0,0,0,0.10);
+        }
+
+        .featured-image {
+            width: 100%;
+            height: 430px;
+            object-fit: cover;
+        }
+
+        .featured-content {
+            padding: 30px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #e7f7ef;
+            color: #087f5b;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .featured-content h2 {
+            font-size: 30px;
+            color: #071952;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .date {
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 18px;
+        }
+
+        .featured-content p {
+            font-size: 17px;
+            color: #444;
+        }
+
+
+        /* =========================
+           ARTICLE GRID
+        ========================== */
+
+        .article-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .article-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .article-card .article-img {
+            height: 190px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 65px;
+            background: linear-gradient(135deg, #e8f4ff, #f3f8ff);
+        }
+
+        .article-content {
+            padding: 20px;
+        }
+
+        .article-content h3 {
+            color: #071952;
+            margin-bottom: 8px;
+        }
+
+        .article-content p {
+            color: #666;
+            font-size: 15px;
+        }
+
+        .read-more {
+            display: inline-block;
+            margin-top: 12px;
+            color: #088395;
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           DAILY LEARNING
+        ========================== */
+
+        .daily-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .daily-card {
+            background: white;
+            padding: 22px;
+            border-left: 5px solid #088395;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+        }
+
+        .daily-card h3 {
+            color: #071952;
+            margin-bottom: 8px;
+        }
+
+        .daily-card p {
+            color: #555;
+            font-size: 15px;
+        }
+
+
+        /* =========================
+           MOTIVATION
+        ========================== */
+
+        .motivation-box {
+            background: linear-gradient(135deg, #071952, #088395);
+            color: white;
+            border-radius: 18px;
+            padding: 45px 30px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .motivation-box .quote {
+            font-size: 27px;
+            font-weight: bold;
+            max-width: 850px;
+            margin: auto;
+            line-height: 1.6;
+        }
+
+        .motivation-box p {
+            margin-top: 15px;
+            color: #dcecff;
+        }
+
+
+        /* =========================
+           ENGLISH
+        ========================== */
+
+        .english-box {
+            background: white;
+            border-radius: 18px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .word {
+            font-size: 30px;
+            color: #071952;
+            font-weight: bold;
+        }
+
+        .meaning {
+            color: #088395;
+            font-weight: bold;
+            margin: 8px 0;
+        }
+
+        .example {
+            background: #f1f7ff;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================== */
+
+        .contact-section {
+            background: #071952;
+            color: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .contact-card {
+            background: rgba(255,255,255,0.08);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .contact-card .icon {
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        .contact-card h3 {
+            margin-bottom: 5px;
+        }
+
+        .contact-card p {
+            color: #dbe8ff;
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            background: #04102f;
+            color: #cdd8ef;
+            text-align: center;
+            padding: 25px 15px;
+        }
+
+        footer strong {
+            color: #ffd166;
+        }
+
+
+        /* =========================
+           BACK TO TOP
+        ========================== */
+
+        #topBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 45px;
+            height: 45px;
+            border: none;
+            border-radius: 50%;
+            background: #088395;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            display: none;
+            z-index: 999;
+        }
+
+
+        /* =========================
+           DARK MODE
+        ========================== */
+
+        body.dark {
+            background: #10151f;
+            color: #eee;
+        }
+
+        body.dark .section-title h2 {
+            color: #fff;
+        }
+
+        body.dark .section-title p {
+            color: #bbb;
+        }
+
+        body.dark .category-card,
+        body.dark .article-card,
+        body.dark .daily-card,
+        body.dark .english-box,
+        body.dark .featured {
+            background: #192231;
+            color: #eee;
+        }
+
+        body.dark .category-card h3,
+        body.dark .article-content h3,
+        body.dark .daily-card h3,
+        body.dark .featured-content h2,
+        body.dark .word {
+            color: #fff;
+        }
+
+        body.dark .category-card p,
+        body.dark .article-content p,
+        body.dark .daily-card p,
+        body.dark .featured-content p {
+            color: #c5ccd8;
+        }
+
+        body.dark .example {
+            background: #222d3d;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 900px) {
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero p {
+                margin: auto;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .categories {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .article-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .daily-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            nav {
+                display: none;
+                position: absolute;
+                top: 75px;
+                left: 0;
+                width: 100%;
+                background: #071952;
+                flex-direction: column;
+                padding: 15px;
+            }
+
+            nav.show {
+                display: flex;
+            }
+
+            nav a {
+                width: 100%;
+                text-align: center;
+            }
+
+            .menu-btn {
+                display: inline-block;
+            }
+        }
+
+
+        @media (max-width: 600px) {
+
+            .header-inner {
+                min-height: 65px;
+            }
+
+            .logo {
+                font-size: 19px;
+            }
+
+            .hero {
+                padding: 55px 15px;
+            }
+
+            .hero h1 {
+                font-size: 34px;
+            }
+
+            .hero h2 {
+                font-size: 21px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .creator-photo img {
+                width: 150px;
+                height: 150px;
+            }
+
+            section {
+                padding: 45px 0;
+            }
+
+            .section-title h2 {
+                font-size: 27px;
+            }
+
+            .categories,
+            .article-grid,
+            .daily-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-image {
+                height: 250px;
+            }
+
+            .featured-content {
+                padding: 20px;
+            }
+
+            .featured-content h2 {
+                font-size: 22px;
+            }
+
+            .featured-content p {
+                font-size: 16px;
+            }
+
+            .motivation-box {
+                padding: 30px 20px;
+            }
+
+            .motivation-box .quote {
+                font-size: 21px;
+            }
+        }
+
+    </style>
 </head>
+
 
 <body>
 
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About Me</a>
-        <a href="#education">Education</a>
-        <a href="#experience">Experience</a>
-        <a href="#skills">Skills</a>
-        <a href="#news">News</a>
-        <a href="#contact">Contact</a>
-    </nav>
 
-    <div class="profile" id="home">
+<!-- =========================
+     HEADER
+========================= -->
 
-        <img src="profile.jpg">
+<header>
 
-        <h1>Ariful Haque Chowdhury Tanvir</h1>
+    <div class="container header-inner">
 
-        <h2>Personal Portfolio</h2>
+        <div class="logo">
+            Learn <span>•</span> Know <span>•</span> Grow
+        </div>
 
-        <p>
-            Finance & Banking Graduate | Cashier | Computer Skills
-        </p>
+        <nav id="mainNav">
 
-    </div>
+            <a href="#home">Home</a>
+            <a href="#news">News</a>
+            <a href="#technology">Technology</a>
+            <a href="#english">English</a>
+            <a href="#motivation">Motivation</a>
+            <a href="#health">Health</a>
+            <a href="#learning">Learning</a>
+            <a href="#contact">Contact</a>
 
+        </nav>
 
-    <div class="section" id="about">
+        <div>
+            <button class="dark-btn" onclick="toggleDarkMode()">
+                🌙
+            </button>
 
-        <h2>About Me</h2>
-
-        <p>
-            I am Ariful Haque Chowdhury Tanvir. I have completed my
-            Master of Business Administration (MBA) with a major
-            in Finance & Banking.
-        </p>
-
-        <p>
-            I have practical experience in Islami Bank Agent Banking
-            and have skills in Microsoft Word, Microsoft Excel,
-            Internet and basic computer operations.
-        </p>
+            <button class="menu-btn" onclick="toggleMenu()">
+                ☰
+            </button>
+        </div>
 
     </div>
 
-
-    <div class="section">
-
-        <h2>Career Objective</h2>
-
-        <p>
-            To build a career in a reputed organization where I can
-            utilize my educational qualifications, skills and experience
-            effectively and contribute to the organization with
-            sincerity and dedication.
-        </p>
-
-    </div>
+</header>
 
 
-    <div class="section" id="education">
 
-        <h2>Education</h2>
+<!-- =========================
+     HERO
+========================= -->
 
-        <ul>
+<section class="hero" id="home">
 
-            <li>
-                <b>MBA - Finance & Banking</b><br>
-                Dhaka Commerce College<br>
-                National University<br>
-                Result: 3.16 out of 4.00
-            </li>
+    <div class="hero-content">
 
-            <br>
+        <div>
 
-            <li>
-                <b>BBA - Finance & Banking</b><br>
-                Kazi Mohammad Shafiqul Islam College<br>
-                National University<br>
-                Result: 3.05 out of 4.00
-            </li>
+            <h1>
+                Learn <span>•</span> Know <span>•</span> Grow
+            </h1>
 
-            <br>
-
-            <li>
-                <b>Higher Secondary Certificate (HSC)</b><br>
-                Alif Subhan Chowdhury College<br>
-                Business Studies<br>
-                Result: 3.33 out of 5.00
-            </li>
-
-            <br>
-
-            <li>
-                <b>Secondary School Certificate (SSC)</b><br>
-                Mirpur Foyzunnessa High School<br>
-                Business Studies<br>
-                Result: 3.88 out of 5.00
-            </li>
-
-        </ul>
-
-    </div>
-
-
-    <div class="section" id="experience">
-
-        <h2>Work Experience</h2>
-
-        <p>
-            <b>Position:</b> Cashier
-        </p>
-
-        <p>
-            <b>Organization:</b> Islami Bank Agent Banking
-        </p>
-
-        <p>
-            <b>Duration:</b> 10th November 2021 to Present
-        </p>
-
-    </div>
-
-
-    <div class="section" id="news">
-
-        <h2>Latest News</h2>
-
-        <div class="news-card">
-
-            <h3>My First News</h3>
-
-            <p class="news-date">
-                19 September 2026
-            </p>
+            <h2>
+                জ্ঞান, শেখা ও অনুপ্রেরণার একটি অনলাইন প্ল্যাটফর্ম
+            </h2>
 
             <p>
-                Welcome to my personal portfolio website.
-                I will share my latest updates and news here.
+                প্রতিদিন নতুন কিছু জানুন, নতুন কিছু শিখুন এবং
+                নিজের দক্ষতাকে আরও উন্নত করুন। এখানে থাকছে
+                News, Technology, AI, English Learning,
+                Motivation, Health এবং বিভিন্ন গুরুত্বপূর্ণ জ্ঞান।
             </p>
+
+            <div class="hero-buttons">
+
+                <a href="#news" class="btn btn-primary">
+                    📰 Latest News
+                </a>
+
+                <a href="#learning" class="btn btn-light">
+                    📚 Start Learning
+                </a>
+
+            </div>
 
         </div>
 
 
-        <div class="news-card">
+        <!-- YOUR PHOTO -->
 
-            <h3>My Website Has Been Updated</h3>
+        <div class="creator-photo">
 
-            <p class="news-date">
-                20 September 2026
-            </p>
+            <img src="profile.jpg"
+                 alt="Creator Photo">
 
             <p>
-                I have updated my personal portfolio website
-                with new information and features.
+                Created & Curated by<br>
+                <strong>Ariful Haque Chowdhury Tanvir</strong>
             </p>
 
         </div>
 
     </div>
 
+</section>
 
-    <div class="section" id="skills">
 
-        <h2>Computer Skills</h2>
 
-        <ul>
-            <li>Microsoft Word</li>
-            <li>Microsoft Excel</li>
-            <li>Internet & E-mail</li>
-            <li>Basic Computer Operations</li>
-        </ul>
+<!-- =========================
+     CATEGORIES
+========================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Explore Our Topics</h2>
+
+            <p>
+                আপনার প্রয়োজন অনুযায়ী একটি বিষয় বেছে নিন
+            </p>
+
+        </div>
+
+
+        <div class="categories">
+
+            <div class="category-card">
+
+                <div class="category-icon">📰</div>
+
+                <h3>Latest News</h3>
+
+                <p>
+                    গুরুত্বপূর্ণ ও আকর্ষণীয় সাম্প্রতিক খবর
+                </p>
+
+            </div>
+
+
+            <div class="category-card">
+
+                <div class="category-icon">💻</div>
+
+                <h3>Technology</h3>
+
+                <p>
+                    Computer, Internet ও নতুন প্রযুক্তি
+                </p>
+
+            </div>
+
+
+            <div class="category-card">
+
+                <div class="category-icon">🤖</div>
+
+                <h3>AI & Future</h3>
+
+                <p>
+                    Artificial Intelligence ও ভবিষ্যৎ প্রযুক্তি
+                </p>
+
+            </div>
+
+
+            <div class="category-card">
+
+                <div class="category-icon">🇬🇧</div>
+
+                <h3>English Learning</h3>
+
+                <p>
+                    সহজভাবে English শেখার উপায়
+                </p>
+
+            </div>
+
+
+            <div class="category-card">
+
+                <div class="category-icon">💪</div>
+
+                <h3>Motivation</h3>
+
+                <p>
+                    নিজেকে এগিয়ে নেওয়ার অনুপ্রেরণা
+                </p>
+
+            </div>
+
+
+            <div class="category-card">
+
+                <div class="category-icon">🍎</div>
+
+                <h3>Health & Food</h3>
+
+                <p>
+                    স্বাস্থ্য ও পুষ্টি বিষয়ক তথ্য
+                </p>
+
+            </div>
+
+
+            <div class="category-card">
+
+                <div class="category-icon">📚</div>
+
+                <h3>Learning & Skills</h3>
+
+                <p>
+                    নতুন skill শেখার সহজ নির্দেশনা
+                </p>
+
+            </div>
+
+
+            <div class="category-card">
+
+                <div class="category-icon">🧠</div>
+
+                <h3>Knowledge</h3>
+
+                <p>
+                    General Knowledge ও interesting facts
+                </p>
+
+            </div>
+
+        </div>
 
     </div>
 
+</section>
 
-    <div class="section">
 
-        <h2>English Language</h2>
 
-        <p>
-            <b>IELTS:</b> Overall Band Score 6.0
-        </p>
+<!-- =========================
+     FEATURED NEWS
+========================= -->
 
-        <p>
-            <b>English Level:</b> B2 (Upper-Intermediate)
-        </p>
+<section id="news">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>📰 Featured News</h2>
+
+            <p>
+                আজকের গুরুত্বপূর্ণ লেখা
+            </p>
+
+        </div>
+
+
+        <article class="featured">
+
+            <img src="health_news_thumbnail.jpg"
+                 class="featured-image"
+                 alt="Healthy Food News">
+
+
+            <div class="featured-content">
+
+                <span class="badge">
+                    স্বাস্থ্য ও খাদ্য
+                </span>
+
+                <h2>
+                    সুস্থ থাকতে খাবারের প্লেটে রাখুন বৈচিত্র্য:
+                    ফল ও পুষ্টিকর খাবারে মিলবে প্রয়োজনীয় পুষ্টি
+                </h2>
+
+                <div class="date">
+                    20 September 2026 | স্বাস্থ্য ও খাদ্য
+                </div>
+
+
+                <p>
+                    সুস্থ জীবনযাপনের জন্য শুধু পেট ভরে খাওয়াই
+                    যথেষ্ট নয়; খাবারে থাকতে হবে প্রয়োজনীয়
+                    ভিটামিন, খনিজ, প্রোটিন, ফাইবার ও পর্যাপ্ত শক্তি।
+                    প্রতিদিনের খাবারে বিভিন্ন ধরনের ফল, সবজি,
+                    ডাল, ডিম, মাছ, দুধ ও অন্যান্য পুষ্টিকর খাবার
+                    রাখলে শরীর প্রয়োজনীয় পুষ্টি পাওয়ার সুযোগ বাড়ে।
+                </p>
+
+
+                <br>
+
+
+                <h3>🍎 ফল কেন গুরুত্বপূর্ণ?</h3>
+
+                <p>
+                    কমলা, পেয়ারা, কলা, পেঁপে, আম, আপেলসহ বিভিন্ন
+                    ফল শরীরকে বিভিন্ন ধরনের ভিটামিন, খনিজ ও
+                    ফাইবার সরবরাহ করতে পারে। স্থানীয় ও মৌসুমি ফল
+                    নিয়মিত খাদ্যতালিকায় রাখা স্বাস্থ্যকর খাদ্যাভ্যাসের
+                    একটি অংশ হতে পারে।
+                </p>
+
+
+                <br>
+
+
+                <h3>🥚 শুধু ফল নয়, প্রয়োজন প্রোটিনও</h3>
+
+                <p>
+                    শরীরের বৃদ্ধি ও দৈনন্দিন কার্যক্রমের জন্য
+                    প্রোটিনও প্রয়োজন। ডিম, মাছ, মাংস, দুধ, ডাল
+                    ও অন্যান্য প্রোটিনসমৃদ্ধ খাবার সুষম খাদ্যের
+                    অংশ হতে পারে।
+                </p>
+
+
+                <br>
+
+
+                <h3>⚖️ ক্যালরি ও পুষ্টির মধ্যে ভারসাম্য</h3>
+
+                <p>
+                    শরীরের জন্য ক্যালরি বা শক্তি প্রয়োজন। কিন্তু
+                    শুধু বেশি ক্যালরি গ্রহণ করলেই স্বাস্থ্য ভালো
+                    থাকে না। শরীরের প্রয়োজন অনুযায়ী
+                    কার্বোহাইড্রেট, প্রোটিন, স্বাস্থ্যকর ফ্যাট,
+                    ভিটামিন, খনিজ ও ফাইবারের ভারসাম্য থাকা জরুরি।
+                </p>
+
+
+                <br>
+
+
+                <h3>🥗 ছোট পরিবর্তনেই হতে পারে বড় উপকার</h3>
+
+                <ul style="margin-left:25px;">
+
+                    <li>
+                        প্রতিদিন বিভিন্ন ধরনের ফল ও সবজি খাওয়া।
+                    </li>
+
+                    <li>
+                        খাবারে ডাল, ডিম, মাছ বা অন্য কোনো
+                        প্রোটিনের উৎস রাখা।
+                    </li>
+
+                    <li>
+                        অতিরিক্ত চিনি ও মিষ্টি পানীয় কমানো।
+                    </li>
+
+                    <li>
+                        অতিরিক্ত লবণ ও তেল এড়িয়ে চলা।
+                    </li>
+
+                    <li>
+                        পর্যাপ্ত পানি পান করা।
+                    </li>
+
+                    <li>
+                        খাবারে বৈচিত্র্য রাখা এবং পরিমাণের দিকে
+                        খেয়াল রাখা।
+                    </li>
+
+                </ul>
+
+
+                <br>
+
+                <p>
+                    <strong>
+                        সুস্থ থাকার মূল কথা—শুধু বেশি খাওয়া নয়,
+                        সঠিক পরিমাণে সঠিক ধরনের খাবার খাওয়া।
+                    </strong>
+                </p>
+
+            </div>
+
+        </article>
 
     </div>
 
+</section>
 
-    <div class="section">
 
-        <h2>Driving Licence</h2>
 
-        <p>
-            Motorcycle & Car Licence - Valid
-        </p>
+<!-- =========================
+     LATEST ARTICLES
+========================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>🔥 Latest Articles</h2>
+
+            <p>
+                আরও কিছু শেখার ও জানার বিষয়
+            </p>
+
+        </div>
+
+
+        <div class="article-grid">
+
+
+            <article class="article-card">
+
+                <div class="article-img">
+                    🤖
+                </div>
+
+                <div class="article-content">
+
+                    <h3>
+                        AI কী এবং কেন এত গুরুত্বপূর্ণ?
+                    </h3>
+
+                    <p>
+                        Artificial Intelligence কীভাবে আমাদের
+                        দৈনন্দিন জীবন ও ভবিষ্যতের কাজকে
+                        পরিবর্তন করছে তা সহজভাবে জানুন।
+                    </p>
+
+                    <a href="#technology" class="read-more">
+                        আরও পড়ুন →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <article class="article-card">
+
+                <div class="article-img">
+                    💻
+                </div>
+
+                <div class="article-content">
+
+                    <h3>
+                        Computer শেখা শুরু করবেন কীভাবে?
+                    </h3>
+
+                    <p>
+                        একদম beginner থেকে Computer,
+                        Internet, Word এবং Excel শেখার
+                        সহজ পথ।
+                    </p>
+
+                    <a href="#learning" class="read-more">
+                        আরও পড়ুন →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <article class="article-card">
+
+                <div class="article-img">
+                    🇬🇧
+                </div>
+
+                <div class="article-content">
+
+                    <h3>
+                        প্রতিদিন English শেখার সহজ উপায়
+                    </h3>
+
+                    <p>
+                        প্রতিদিন অল্প অল্প করে English vocabulary
+                        ও speaking skill উন্নত করার কিছু কার্যকর
+                        পদ্ধতি।
+                    </p>
+
+                    <a href="#english" class="read-more">
+                        আরও পড়ুন →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <article class="article-card">
+
+                <div class="article-img">
+                    💪
+                </div>
+
+                <div class="article-content">
+
+                    <h3>
+                        Motivation কেন প্রয়োজন?
+                    </h3>
+
+                    <p>
+                        জীবনের লক্ষ্য ধরে রাখতে motivation,
+                        discipline এবং consistent effort কেন
+                        গুরুত্বপূর্ণ তা জানুন।
+                    </p>
+
+                    <a href="#motivation" class="read-more">
+                        আরও পড়ুন →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <article class="article-card">
+
+                <div class="article-img">
+                    🧠
+                </div>
+
+                <div class="article-content">
+
+                    <h3>
+                        প্রতিদিন নতুন কিছু শেখার অভ্যাস
+                    </h3>
+
+                    <p>
+                        প্রতিদিন মাত্র কিছু সময় শেখার জন্য
+                        ব্যবহার করলে কীভাবে নিজের knowledge
+                        বাড়ানো যায়।
+                    </p>
+
+                    <a href="#learning" class="read-more">
+                        আরও পড়ুন →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <article class="article-card">
+
+                <div class="article-img">
+                    🌍
+                </div>
+
+                <div class="article-content">
+
+                    <h3>
+                        Did You Know?
+                    </h3>
+
+                    <p>
+                        পৃথিবী, বিজ্ঞান, প্রযুক্তি ও সাধারণ জ্ঞান
+                        নিয়ে প্রতিদিন নতুন interesting facts জানুন।
+                    </p>
+
+                    <a href="#knowledge" class="read-more">
+                        আরও পড়ুন →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+        </div>
 
     </div>
 
+</section>
 
-    <div class="section contact" id="contact">
 
-        <h2>Contact Me</h2>
 
-        <p>
-            📍 Fadrakhala, Bahubal, Ramsree-3301, Habiganj
-        </p>
+<!-- =========================
+     TECHNOLOGY
+========================= -->
 
-        <p>
-            📞 +8801796321207
-        </p>
+<section id="technology">
 
-        <p>
-            📧 arifulhaquechowdhurytanvir@gmail.com
-        </p>
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>💻 Technology & AI</h2>
+
+            <p>
+                আধুনিক প্রযুক্তি সম্পর্কে সহজভাবে জানুন
+            </p>
+
+        </div>
+
+
+        <div class="article-grid">
+
+            <div class="article-card">
+
+                <div class="article-img">
+                    🤖
+                </div>
+
+                <div class="article-content">
+
+                    <h3>Artificial Intelligence</h3>
+
+                    <p>
+                        AI মানুষের মতো তথ্য বিশ্লেষণ, শেখা,
+                        সিদ্ধান্তে সহায়তা এবং বিভিন্ন কাজ
+                        সম্পন্ন করার প্রযুক্তি।
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="article-card">
+
+                <div class="article-img">
+                    💻
+                </div>
+
+                <div class="article-content">
+
+                    <h3>Computer Skills</h3>
+
+                    <p>
+                        Microsoft Word, Excel, Internet,
+                        typing এবং basic computer skills
+                        ধাপে ধাপে শেখার সুযোগ।
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="article-card">
+
+                <div class="article-img">
+                    🌐
+                </div>
+
+                <div class="article-content">
+
+                    <h3>Internet & Digital World</h3>
+
+                    <p>
+                        Internet, website, online tools এবং
+                        digital world সম্পর্কে প্রয়োজনীয়
+                        ধারণা।
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
 
     </div>
+
+</section>
+
+
+
+<!-- =========================
+     ENGLISH
+========================= -->
+
+<section id="english">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>🇬🇧 English Learning</h2>
+
+            <p>
+                প্রতিদিন একটি নতুন English word শিখুন
+            </p>
+
+        </div>
+
+
+        <div class="english-box">
+
+            <div class="word">
+                Consistent
+            </div>
+
+            <div class="meaning">
+                Meaning: নিয়মিত / ধারাবাহিক
+            </div>
+
+            <p>
+                <strong>Synonyms:</strong>
+                Regular, Steady, Continuous
+            </p>
+
+
+            <div class="example">
+
+                <strong>Example:</strong>
+
+                <br>
+
+                If you are consistent,
+                you can improve your English.
+                
+                <br><br>
+
+                <b>বাংলা:</b>
+                তুমি যদি নিয়মিত চেষ্টা করো,
+                তাহলে তোমার English উন্নত করতে পারবে।
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     MOTIVATION
+========================= -->
+
+<section id="motivation">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>💪 Motivation</h2>
+
+            <p>
+                প্রতিদিন নিজেকে একটু একটু করে উন্নত করুন
+            </p>
+
+        </div>
+
+
+        <div class="motivation-box">
+
+            <div class="quote">
+
+                “You do not have to be perfect.
+                You just have to keep moving forward.”
+
+            </div>
+
+            <p>
+                সফলতা একদিনে আসে না।
+                ছোট ছোট নিয়মিত চেষ্টা একসময় বড় পরিবর্তন তৈরি করে।
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     DAILY LEARNING
+========================= -->
+
+<section id="learning">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>📚 Learn Something Today</h2>
+
+            <p>
+                প্রতিদিনের ছোট ছোট শেখা
+            </p>
+
+        </div>
+
+
+        <div class="daily-grid">
+
+
+            <div class="daily-card">
+
+                <h3>💡 Today's Tip</h3>
+
+                <p>
+                    প্রতিদিন অন্তত ২০–৩০ মিনিট নতুন
+                    কোনো skill শেখার চেষ্টা করুন।
+                </p>
+
+            </div>
+
+
+            <div class="daily-card">
+
+                <h3>⌨️ Computer</h3>
+
+                <p>
+                    Keyboard shortcut শেখা computer
+                    কাজের গতি বাড়াতে সাহায্য করতে পারে।
+                </p>
+
+            </div>
+
+
+            <div class="daily-card">
+
+                <h3>📖 English</h3>
+
+                <p>
+                    প্রতিদিন ৫টি নতুন English word শিখুন
+                    এবং প্রতিটি দিয়ে একটি sentence তৈরি করুন।
+                </p>
+
+            </div>
+
+
+            <div class="daily-card">
+
+                <h3>🧠 Knowledge</h3>
+
+                <p>
+                    প্রতিদিন একটি নতুন বিষয় সম্পর্কে
+                    জানার অভ্যাস করুন।
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     HEALTH
+========================= -->
+
+<section id="health">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>🍎 Health & Food</h2>
+
+            <p>
+                স্বাস্থ্যকর জীবনযাপন ও খাবার সম্পর্কে জানুন
+            </p>
+
+        </div>
+
+
+        <div class="article-grid">
+
+
+            <div class="article-card">
+
+                <div class="article-img">
+                    🍎
+                </div>
+
+                <div class="article-content">
+
+                    <h3>
+                        Balanced Food
+                    </h3>
+
+                    <p>
+                        প্রতিদিনের খাবারে বৈচিত্র্য ও
+                        ভারসাম্য রাখার গুরুত্ব সম্পর্কে জানুন।
+                    </p>
+
+                    <a href="#news" class="read-more">
+                        Featured News পড়ুন →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="article-card">
+
+                <div class="article-img">
+                    💧
+                </div>
+
+                <div class="article-content">
+
+                    <h3>
+                        পানি ও দৈনন্দিন জীবন
+                    </h3>
+
+                    <p>
+                        পর্যাপ্ত পানি পান করার অভ্যাস
+                        দৈনন্দিন স্বাস্থ্যকর জীবনযাপনের অংশ।
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="article-card">
+
+                <div class="article-img">
+                    🥗
+                </div>
+
+                <div class="article-content">
+
+                    <h3>
+                        Healthy Food Choices
+                    </h3>
+
+                    <p>
+                        স্থানীয় ও মৌসুমি ফল, শাকসবজি,
+                        ডাল ও পুষ্টিকর খাবারকে খাদ্যতালিকায়
+                        গুরুত্ব দিন।
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     KNOWLEDGE
+========================= -->
+
+<section id="knowledge">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>🧠 Did You Know?</h2>
+
+            <p>
+                প্রতিদিন একটি নতুন তথ্য
+            </p>
+
+        </div>
+
+
+        <div class="motivation-box">
+
+            <div class="quote">
+                Knowledge grows when you keep learning.
+            </div>
+
+            <p>
+                প্রতিদিন শেখার অভ্যাস আপনার জ্ঞানকে
+                ধীরে ধীরে আরও সমৃদ্ধ করে।
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section class="contact-section" id="contact">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2 style="color:white;">
+                📞 Contact
+            </h2>
+
+            <p style="color:#cbd8ef;">
+                যোগাযোগের জন্য নিচের তথ্য ব্যবহার করুন
+            </p>
+
+        </div>
+
+
+        <div class="contact-grid">
+
+
+            <div class="contact-card">
+
+                <div class="icon">
+                    👤
+                </div>
+
+                <h3>
+                    Name
+                </h3>
+
+                <p>
+                    Ariful Haque Chowdhury Tanvir
+                </p>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <div class="icon">
+                    📞
+                </div>
+
+                <h3>
+                    Phone
+                </h3>
+
+                <p>
+                    +8801796321207
+                </p>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <div class="icon">
+                    📧
+                </div>
+
+                <h3>
+                    Email
+                </h3>
+
+                <p>
+                    arifulhaquechowdhurytanvir@gmail.com
+                </p>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <div class="icon">
+                    📍
+                </div>
+
+                <h3>
+                    Address
+                </h3>
+
+                <p>
+                    Fadrakhala, Bahubal,
+                    Ramsree-3301, Habiganj
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <p>
+        © 2026
+        <strong>Learn • Know • Grow</strong>
+        — All Rights Reserved.
+    </p>
+
+    <p>
+        Created & Curated by
+        <strong>Ariful Haque Chowdhury Tanvir</strong>
+    </p>
+
+</footer>
+
+
+
+<!-- BACK TO TOP -->
+
+<button id="topBtn" onclick="goTop()">
+    ↑
+</button>
+
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+    /* MOBILE MENU */
+
+    function toggleMenu() {
+
+        const nav = document.getElementById("mainNav");
+
+        nav.classList.toggle("show");
+
+    }
+
+
+    /* DARK MODE */
+
+    function toggleDarkMode() {
+
+        document.body.classList.toggle("dark");
+
+    }
+
+
+    /* BACK TO TOP */
+
+    const topBtn = document.getElementById("topBtn");
+
+    window.addEventListener("scroll", function() {
+
+        if (window.scrollY > 400) {
+
+            topBtn.style.display = "block";
+
+        } else {
+
+            topBtn.style.display = "none";
+
+        }
+
+    });
+
+
+    function goTop() {
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    }
+
+
+    /* CLOSE MOBILE MENU AFTER CLICK */
+
+    document.querySelectorAll("#mainNav a").forEach(function(link) {
+
+        link.addEventListener("click", function() {
+
+            document.getElementById("mainNav")
+                    .classList.remove("show");
+
+        });
+
+    });
+
+</script>
+
 
 </body>
-
 </html>
