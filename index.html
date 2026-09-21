@@ -1,1516 +1,1061 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="bn">
 <head>
   <meta charset="UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta
-    name="description"
-    content="Learn • Know • Grow — News, English Learning, Technology, AI, Islamic Learning, Motivation, Health, Skills and Knowledge."
-  >
-
-  <title>Learn • Know • Grow | Online Magazine</title>
-
-  <!-- Supabase -->
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
+  <title>Ariful Haque Chowdhury - Learn • Know • Grow</title>
 
   <style>
-
     * {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-
-    html {
       scroll-behavior: smooth;
     }
 
-
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #eef4f8;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #eef5f9;
       color: #222;
       line-height: 1.7;
     }
 
-
-    /* =========================
-       HEADER
-    ========================== */
-
     header {
-      background: linear-gradient(135deg, #062d5c, #0b5ca8);
+      background: linear-gradient(135deg, #063970, #0b6fa4);
       color: white;
-      padding: 25px 15px;
       text-align: center;
+      padding: 35px 15px;
     }
-
 
     header h1 {
+      margin: 0;
       font-size: 32px;
-      margin-bottom: 5px;
     }
-
 
     header p {
-      font-size: 16px;
-      opacity: 0.95;
+      margin: 8px 0 0;
+      font-size: 17px;
     }
 
-
-    /* =========================
-       NAVIGATION
-    ========================== */
-
     nav {
-      background: #062d5c;
+      background: #062b4f;
+      padding: 12px;
+      text-align: center;
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     }
-
-
-    .nav-container {
-      max-width: 1200px;
-      margin: auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
 
     nav a {
       color: white;
       text-decoration: none;
-      padding: 13px 12px;
       display: inline-block;
+      margin: 5px 7px;
+      padding: 7px 10px;
+      border-radius: 5px;
       font-size: 14px;
-      transition: 0.3s;
     }
-
 
     nav a:hover {
-      background: #ffd700;
-      color: #062d5c;
+      background: #ffd43b;
+      color: #111;
     }
-
-
-    .menu-btn {
-      display: none;
-      background: #062d5c;
-      color: white;
-      border: none;
-      padding: 12px;
-      font-size: 20px;
-      cursor: pointer;
-    }
-
-
-    /* =========================
-       HERO
-    ========================== */
 
     .hero {
-      max-width: 1100px;
-      margin: 30px auto;
-      padding: 35px 20px;
-      background: white;
-      border-radius: 18px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-      display: flex;
-      align-items: center;
-      gap: 30px;
-    }
-
-
-    .hero img {
-      width: 170px;
-      height: 170px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 5px solid #0b5ca8;
-    }
-
-
-    .hero-text h2 {
-      color: #062d5c;
-      font-size: 30px;
-      margin-bottom: 10px;
-    }
-
-
-    .hero-text p {
-      color: #555;
-      font-size: 17px;
-    }
-
-
-    /* =========================
-       GENERAL SECTION
-    ========================== */
-
-    .section {
-      max-width: 1100px;
-      margin: 30px auto;
-      padding: 30px 25px;
+      max-width: 900px;
+      margin: 25px auto;
       background: white;
       border-radius: 15px;
-      box-shadow: 0 4px 18px rgba(0,0,0,0.07);
+      padding: 30px 20px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
     }
 
+    .profile {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 5px solid #0b6fa4;
+    }
+
+    .hero h2 {
+      color: #063970;
+      margin-bottom: 5px;
+    }
+
+    .section {
+      max-width: 900px;
+      margin: 25px auto;
+      padding: 25px 20px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+    }
 
     .section h2 {
-      color: #062d5c;
-      border-left: 5px solid #0b5ca8;
-      padding-left: 12px;
-      margin-bottom: 20px;
+      color: #063970;
+      border-bottom: 2px solid #0b6fa4;
+      padding-bottom: 8px;
     }
 
-
-    /* =========================
-       CATEGORY BOXES
-    ========================== */
-
     .category-grid {
+      max-width: 900px;
+      margin: 25px auto;
+      padding: 10px;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
       gap: 15px;
     }
 
-
     .category-card {
-      background: #f1f7ff;
-      padding: 20px;
-      border-radius: 12px;
+      background: white;
+      padding: 20px 10px;
       text-align: center;
-      border: 1px solid #dbeaf7;
-      transition: 0.3s;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+      transition: 0.2s;
     }
-
 
     .category-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     }
-
 
     .category-card a {
       text-decoration: none;
-      color: #062d5c;
+      color: #063970;
       font-weight: bold;
-      font-size: 17px;
     }
 
-
-    /* =========================
-       FEATURED ARTICLE
-    ========================== */
-
-    .featured {
-      display: grid;
-      grid-template-columns: 1fr 1.4fr;
-      gap: 25px;
-      align-items: center;
+    .content-box {
+      background: #f7fbfd;
+      border-left: 5px solid #0b6fa4;
+      padding: 18px;
+      margin: 15px 0;
+      border-radius: 8px;
     }
 
-
-    .featured img {
-      width: 100%;
-      max-height: 300px;
-      object-fit: cover;
-      border-radius: 12px;
+    .content-box h3 {
+      margin-top: 0;
+      color: #063970;
     }
-
-
-    .featured h3 {
-      color: #062d5c;
-      font-size: 25px;
-      margin-bottom: 8px;
-    }
-
-
-    .date {
-      color: #777;
-      font-size: 13px;
-      margin-bottom: 10px;
-    }
-
-
-    /* =========================
-       ARTICLE GRID
-    ========================== */
-
-    .article-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
 
     .article-card {
-      background: white;
+      background: #ffffff;
       border: 1px solid #ddd;
       border-radius: 12px;
-      overflow: hidden;
-      transition: 0.3s;
+      margin: 15px 0;
+      padding: 18px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
     }
-
-
-    .article-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 7px 20px rgba(0,0,0,0.12);
-    }
-
 
     .article-card img {
       width: 100%;
-      height: 190px;
+      max-height: 300px;
       object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 12px;
     }
 
-
-    .article-content {
-      padding: 18px;
+    .article-card h3 {
+      margin: 5px 0;
+      color: #063970;
     }
-
-
-    .article-content h3 {
-      color: #062d5c;
-      margin-bottom: 7px;
-      font-size: 20px;
-    }
-
-
-    .article-content p {
-      color: #555;
-    }
-
 
     .category-label {
       display: inline-block;
-      background: #e5f1ff;
-      color: #07559d;
+      background: #0b6fa4;
+      color: white;
       padding: 4px 9px;
-      border-radius: 20px;
+      border-radius: 15px;
       font-size: 12px;
       margin-bottom: 8px;
     }
 
+    .date {
+      color: #777;
+      font-size: 13px;
+    }
 
     .read-more {
-      display: inline-block;
-      margin-top: 12px;
-      color: #07559d;
-      font-weight: bold;
-      text-decoration: none;
+      background: #063970;
+      color: white;
+      border: none;
+      padding: 9px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 10px;
     }
 
-
-    /* =========================
-       STATIC CONTENT
-    ========================== */
-
-    .content-box {
-      background: #f8fbff;
-      padding: 20px;
-      border-radius: 10px;
-      margin-top: 15px;
-      border: 1px solid #e0ebf5;
+    .read-more:hover {
+      background: #0b6fa4;
     }
-
-
-    .content-box h3 {
-      color: #062d5c;
-      margin-bottom: 8px;
-    }
-
-
-    /* =========================
-       CONTACT
-    ========================== */
-
-    .contact-info {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 15px;
-    }
-
-
-    .contact-card {
-      background: #f1f7ff;
-      padding: 18px;
-      border-radius: 10px;
-    }
-
-
-    .contact-card strong {
-      color: #062d5c;
-    }
-
-
-    /* =========================
-       FOOTER
-    ========================== */
 
     footer {
-      margin-top: 40px;
-      background: #062d5c;
+      background: #062b4f;
       color: white;
       text-align: center;
       padding: 25px 15px;
+      margin-top: 35px;
     }
-
-
-    footer p {
-      margin: 5px 0;
-    }
-
-
-    /* =========================
-       BACK TO TOP
-    ========================== */
 
     #topBtn {
       position: fixed;
       right: 20px;
       bottom: 20px;
-      display: none;
-      border: none;
-      background: #0b5ca8;
+      background: #063970;
       color: white;
+      border: none;
+      border-radius: 50%;
       width: 45px;
       height: 45px;
-      border-radius: 50%;
-      font-size: 20px;
       cursor: pointer;
+      font-size: 18px;
+      display: none;
     }
 
+    /* Modal */
 
-    /* =========================
-       LOADING
-    ========================== */
-
-    .loading {
-      text-align: center;
-      padding: 20px;
-      color: #666;
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.65);
+      overflow-y: auto;
     }
 
-
-    .no-article {
-      text-align: center;
-      background: #f7f7f7;
+    .modal-content {
+      background: white;
+      width: 90%;
+      max-width: 800px;
+      margin: 50px auto;
       padding: 25px;
-      border-radius: 10px;
-      color: #666;
+      border-radius: 12px;
+      position: relative;
     }
 
-
-    /* =========================
-       MOBILE
-    ========================== */
-
-    @media (max-width: 800px) {
-
-      .nav-container {
-        display: none;
-        flex-direction: column;
-      }
-
-
-      .nav-container.show {
-        display: flex;
-      }
-
-
-      .menu-btn {
-        display: block;
-        width: 100%;
-      }
-
-
-      nav a {
-        width: 100%;
-        text-align: center;
-      }
-
-
-      .hero {
-        flex-direction: column;
-        text-align: center;
-      }
-
-
-      .featured {
-        grid-template-columns: 1fr;
-      }
-
-
-      .article-grid {
-        grid-template-columns: 1fr;
-      }
-
-
-      .category-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-
-      .contact-info {
-        grid-template-columns: 1fr;
-      }
-
+    .close {
+      position: absolute;
+      right: 20px;
+      top: 10px;
+      font-size: 30px;
+      cursor: pointer;
+      color: #555;
     }
 
-
-    @media (max-width: 500px) {
+    @media(max-width:600px) {
 
       header h1 {
         font-size: 25px;
       }
 
-
-      .hero-text h2 {
-        font-size: 24px;
+      nav a {
+        font-size: 13px;
+        margin: 3px;
       }
-
-
-      .category-grid {
-        grid-template-columns: 1fr;
-      }
-
 
       .section {
-        margin: 20px 10px;
-        padding: 20px 15px;
+        margin: 15px 10px;
       }
 
+      .category-grid {
+        margin: 15px 10px;
+      }
     }
-
   </style>
-
 </head>
-
 
 <body>
 
+<header>
+  <h1>Learn • Know • Grow</h1>
+  <p>Online Magazine & Learning Platform</p>
+</header>
 
-  <!-- =========================
-       HEADER
-  ========================== -->
+<nav>
+  <a href="#home">🏠 Home</a>
+  <a href="#recent-events">📰 সাম্প্রতিক ঘটনা</a>
+  <a href="#news">News</a>
+  <a href="#technology">💻 Technology</a>
+  <a href="#ai">🤖 AI</a>
+  <a href="#islamic">☪️ Islamic</a>
+  <a href="#english">📘 English</a>
+  <a href="#motivation">💡 Motivation</a>
+  <a href="#health">🍎 Health</a>
+  <a href="#learning">🎓 Learning</a>
+  <a href="#knowledge">🧠 Knowledge</a>
+  <a href="#sports">🏏 খেলাধুলা</a>
+  <a href="#entertainment">🎬 বিনোদন</a>
+  <a href="#contact">📞 Contact</a>
+</nav>
 
-  <header>
+<!-- HOME -->
 
-    <h1>Learn • Know • Grow</h1>
+<section class="hero" id="home">
+
+  <img src="profile.jpg" class="profile" alt="Ariful Haque Chowdhury">
+
+  <h2>Ariful Haque Chowdhury</h2>
+
+  <p>
+    Welcome to my online magazine and learning platform.
+  </p>
+
+  <p>
+    এখানে বিভিন্ন বিষয় সম্পর্কে জানা, শেখা এবং নতুন কিছু
+    আবিষ্কার করার সুযোগ থাকবে।
+  </p>
+
+</section>
+
+
+<!-- CATEGORY -->
+
+<div class="category-grid">
+
+  <div class="category-card">
+    <a href="#recent-events">📰 সাম্প্রতিক ঘটনা</a>
+  </div>
+
+  <div class="category-card">
+    <a href="#news">🗞️ News</a>
+  </div>
+
+  <div class="category-card">
+    <a href="#technology">💻 Technology</a>
+  </div>
+
+  <div class="category-card">
+    <a href="#ai">🤖 AI & Future</a>
+  </div>
+
+  <div class="category-card">
+    <a href="#islamic">☪️ Islamic Learning</a>
+  </div>
+
+  <div class="category-card">
+    <a href="#english">📘 English Learning</a>
+  </div>
+
+  <div class="category-card">
+    <a href="#motivation">💡 Motivation</a>
+  </div>
+
+  <div class="category-card">
+    <a href="#health">🍎 Health & Food</a>
+  </div>
+
+  <div class="category-card">
+    <a href="#learning">🎓 Learning & Skills</a>
+  </div>
+
+  <div class="category-card">
+    <a href="#knowledge">🧠 Knowledge</a>
+  </div>
+
+  <div class="category-card">
+    <a href="#sports">🏏 খেলাধুলা</a>
+  </div>
+
+  <div class="category-card">
+    <a href="#entertainment">🎬 বিনোদন</a>
+  </div>
+
+</div>
+
+
+<!-- DYNAMIC ARTICLES -->
+
+<section class="section" id="latest">
+
+  <h2>🆕 Latest Articles</h2>
+
+  <div id="dynamicArticles">
+    <p>Articles loading...</p>
+  </div>
+
+</section>
+
+
+<!-- RECENT EVENTS -->
+
+<section class="section" id="recent-events">
+
+  <h2>📰 সাম্প্রতিক ঘটনা</h2>
+
+  <div class="content-box">
+
+    <h3>বাংলাদেশ ও বিশ্বের সাম্প্রতিক গুরুত্বপূর্ণ ঘটনা</h3>
 
     <p>
-      Online Magazine & Learning Platform
+      দেশ ও বিশ্বের বিভিন্ন গুরুত্বপূর্ণ ঘটনা, নতুন আপডেট,
+      সামাজিক বিষয়, বিজ্ঞান ও প্রযুক্তি, খেলাধুলা এবং অন্যান্য
+      উল্লেখযোগ্য ঘটনা এখানে প্রকাশ করা হবে।
     </p>
 
-  </header>
+  </div>
+
+  <div id="recentEventsArticles"></div>
+
+</section>
 
 
+<!-- NEWS -->
 
-  <!-- =========================
-       NAVIGATION
-  ========================== -->
+<section class="section" id="news">
 
-  <nav>
+  <h2>🗞️ News</h2>
 
-    <button class="menu-btn" onclick="toggleMenu()">
-      ☰ Menu
-    </button>
+  <div class="content-box">
 
+    <h3>Latest News</h3>
 
-    <div class="nav-container" id="navMenu">
+    <p>
+      দেশ ও বিশ্বের গুরুত্বপূর্ণ খবর এবং বিভিন্ন তথ্য
+      এখানে প্রকাশ করা হবে।
+    </p>
 
-      <a href="#home">Home</a>
+  </div>
 
-      <a href="#news">News</a>
+  <div id="newsArticles"></div>
 
-      <a href="#technology">Technology</a>
-
-      <a href="#ai">AI</a>
-
-      <a href="#islamic">Islamic</a>
-
-      <a href="#english">English</a>
-
-      <a href="#motivation">Motivation</a>
-
-      <a href="#health">Health</a>
-
-      <a href="#learning">Learning</a>
-
-      <a href="#knowledge">Knowledge</a>
-
-      <a href="#contact">Contact</a>
-
-    </div>
-
-  </nav>
+</section>
 
 
+<!-- TECHNOLOGY -->
 
-  <!-- =========================
-       HOME / HERO
-  ========================== -->
+<section class="section" id="technology">
 
-  <section class="hero" id="home">
+  <h2>💻 Technology</h2>
+
+  <div class="content-box">
+
+    <h3>Technology & Modern World</h3>
+
+    <p>
+      প্রযুক্তির নতুন আবিষ্কার, কম্পিউটার, ইন্টারনেট,
+      সফটওয়্যার এবং আধুনিক প্রযুক্তি সম্পর্কে জানা যাবে।
+    </p>
+
+  </div>
+
+  <div id="technologyArticles"></div>
+
+</section>
+
+
+<!-- AI -->
+
+<section class="section" id="ai">
+
+  <h2>🤖 AI & Future</h2>
+
+  <div class="content-box">
+
+    <h3>Artificial Intelligence</h3>
+
+    <p>
+      Artificial Intelligence বা AI কীভাবে আমাদের জীবন,
+      শিক্ষা, কাজ এবং ভবিষ্যৎ পরিবর্তন করছে তা নিয়ে
+      বিভিন্ন তথ্য ও লেখা এখানে থাকবে।
+    </p>
+
+  </div>
+
+  <div id="aiArticles"></div>
+
+</section>
+
+
+<!-- ISLAMIC -->
+
+<section class="section" id="islamic">
+
+  <h2>☪️ Islamic Learning</h2>
+
+  <div class="content-box">
+
+    <h3>ইসলাম সম্পর্কে জানুন</h3>
+
+    <p>
+      নামাজ, কুরআন, হাদিস, ইসলামিক শিক্ষা,
+      নৈতিকতা ও সুন্দর জীবনযাপন সম্পর্কে
+      উপকারী লেখা এখানে প্রকাশ করা হবে।
+    </p>
+
+  </div>
+
+  <div id="islamicArticles"></div>
+
+</section>
+
+
+<!-- ENGLISH -->
+
+<section class="section" id="english">
+
+  <h2>📘 English Learning</h2>
+
+  <div class="content-box">
+
+    <h3>Learn English</h3>
+
+    <p>
+      English vocabulary, grammar, speaking,
+      writing এবং দৈনন্দিন English শেখার
+      বিভিন্ন সহজ উপায় এখানে দেওয়া হবে।
+    </p>
+
+  </div>
+
+  <div id="englishArticles"></div>
+
+</section>
+
+
+<!-- MOTIVATION -->
+
+<section class="section" id="motivation">
+
+  <h2>💡 Motivation</h2>
+
+  <div class="content-box">
+
+    <h3>Positive Thinking & Motivation</h3>
+
+    <p>
+      জীবনে লক্ষ্য নির্ধারণ, আত্মবিশ্বাস,
+      পরিশ্রম এবং ইতিবাচক চিন্তা নিয়ে
+      বিভিন্ন অনুপ্রেরণামূলক লেখা এখানে থাকবে।
+    </p>
+
+  </div>
+
+  <div id="motivationArticles"></div>
+
+</section>
+
+
+<!-- HEALTH -->
+
+<section class="section" id="health">
+
+  <h2>🍎 Health & Food</h2>
+
+  <div class="content-box">
 
     <img
-      src="profile.jpg"
-      alt="Ariful Haque Chowdhury"
-      onerror="this.style.display='none'"
+      src="health_news_thumbnail.jpg"
+      alt="Health and Food"
+      style="width:100%;max-height:300px;object-fit:cover;border-radius:10px;"
     >
 
+    <h3>সুস্থ থাকতে খাবারের প্লেটে রাখুন বৈচিত্র্য</h3>
 
-    <div class="hero-text">
+    <p>
+      ফল, শাকসবজি এবং পুষ্টিকর খাবার শরীরের প্রয়োজনীয়
+      পুষ্টি পেতে গুরুত্বপূর্ণ ভূমিকা রাখে।
+    </p>
 
-      <h2>
-        Welcome to Learn • Know • Grow
-      </h2>
+  </div>
 
-      <p>
-        A small online magazine and learning platform
-        where you can learn, explore and discover useful
-        information about technology, AI, English,
-        motivation, health, Islamic learning and more.
-      </p>
+  <div id="healthArticles"></div>
 
-      <p style="margin-top:10px;">
-        Created & Curated by
-        <strong>Ariful Haque Chowdhury</strong>
-      </p>
-
-    </div>
-
-  </section>
+</section>
 
 
+<!-- LEARNING -->
 
-  <!-- =========================
-       CATEGORIES
-  ========================== -->
+<section class="section" id="learning">
 
-  <section class="section">
+  <h2>🎓 Learning & Skills</h2>
 
-    <h2>Explore Categories</h2>
+  <div class="content-box">
 
+    <h3>শিখুন নতুন দক্ষতা</h3>
 
-    <div class="category-grid">
+    <p>
+      Computer, Excel, Data Entry, Photoshop,
+      Communication এবং অন্যান্য প্রয়োজনীয়
+      দক্ষতা সম্পর্কে সহজভাবে শেখানো হবে।
+    </p>
 
-      <div class="category-card">
-        <a href="#news">📰 Latest News</a>
-      </div>
+  </div>
 
+  <div id="learningArticles"></div>
 
-      <div class="category-card">
-        <a href="#technology">💻 Technology</a>
-      </div>
-
-
-      <div class="category-card">
-        <a href="#ai">🤖 AI & Future</a>
-      </div>
+</section>
 
 
-      <div class="category-card">
-        <a href="#islamic">☪️ Islamic Learning</a>
-      </div>
+<!-- KNOWLEDGE -->
+
+<section class="section" id="knowledge">
+
+  <h2>🧠 Knowledge</h2>
+
+  <div class="content-box">
+
+    <h3>জ্ঞান ও সাধারণ তথ্য</h3>
+
+    <p>
+      ইতিহাস, বিজ্ঞান, পরিবেশ, সাধারণ জ্ঞান,
+      পৃথিবী এবং দৈনন্দিন জীবনের বিভিন্ন
+      গুরুত্বপূর্ণ বিষয় সম্পর্কে জানুন।
+    </p>
+
+  </div>
+
+  <div id="knowledgeArticles"></div>
+
+</section>
 
 
-      <div class="category-card">
-        <a href="#english">📚 English Learning</a>
-      </div>
+<!-- SPORTS -->
+
+<section class="section" id="sports">
+
+  <h2>🏏 খেলাধুলা</h2>
+
+  <div class="content-box">
+
+    <h3>Sports News & Updates</h3>
+
+    <p>
+      ক্রিকেট, ফুটবল, আন্তর্জাতিক ও দেশীয় খেলাধুলার খবর,
+      খেলোয়াড়দের তথ্য এবং বিভিন্ন গুরুত্বপূর্ণ Sports
+      update এখানে প্রকাশ করা হবে।
+    </p>
+
+  </div>
+
+  <div id="sportsArticles"></div>
+
+</section>
 
 
-      <div class="category-card">
-        <a href="#motivation">🌱 Motivation</a>
-      </div>
+<!-- ENTERTAINMENT -->
+
+<section class="section" id="entertainment">
+
+  <h2>🎬 বিনোদন</h2>
+
+  <div class="content-box">
+
+    <h3>Entertainment</h3>
+
+    <p>
+      সিনেমা, নাটক, গান, ওয়েব সিরিজ, সংস্কৃতি এবং
+      বিনোদন জগতের বিভিন্ন তথ্য ও খবর এখানে
+      প্রকাশ করা হবে।
+    </p>
+
+  </div>
+
+  <div id="entertainmentArticles"></div>
+
+</section>
 
 
-      <div class="category-card">
-        <a href="#health">🥗 Health & Food</a>
-      </div>
+<!-- CONTACT -->
+
+<section class="section" id="contact">
+
+  <h2>📞 Contact</h2>
+
+  <div class="content-box">
+
+    <p><strong>Name:</strong> Ariful Haque Chowdhury</p>
+
+    <p><strong>Phone:</strong> +8801796321207</p>
+
+    <p>
+      <strong>Email:</strong>
+      arifulhaquechowdhurytanvir@gmail.com
+    </p>
+
+    <p>
+      <strong>Address:</strong>
+      Fadrakhala, Bahubal, Ramsree-3301, Habiganj
+    </p>
+
+  </div>
+
+</section>
 
 
-      <div class="category-card">
-        <a href="#learning">🎓 Learning & Skills</a>
-      </div>
+<footer>
+
+  <p>© 2026 Ariful Haque Chowdhury</p>
+
+  <p>Learn • Know • Grow</p>
+
+</footer>
 
 
-      <div class="category-card">
-        <a href="#knowledge">💡 Knowledge</a>
-      </div>
+<!-- TOP BUTTON -->
 
-    </div>
-
-  </section>
+<button id="topBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  ↑
+</button>
 
 
+<!-- ARTICLE MODAL -->
 
-  <!-- =========================
-       FEATURED NEWS
-  ========================== -->
+<div id="articleModal" class="modal">
 
-  <section class="section" id="news">
+  <div class="modal-content">
 
-    <h2>Featured News</h2>
+    <span class="close" onclick="closeModal()">&times;</span>
 
+    <div id="modalContent"></div>
 
-    <div class="featured">
+  </div>
 
-      <img
-        src="health_news_thumbnail.jpg"
-        alt="Health and Food News"
-        onerror="this.style.display='none'"
-      >
+</div>
 
 
-      <div>
+<!-- SUPABASE -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+
+  const SUPABASE_URL =
+    "https://evagottazckdehlurgvh.supabase.co";
+
+  const SUPABASE_KEY =
+    "sb_publishable_A2n8sQKfBQzQWClQyZzufQ_EM_LCBVQ";
+
+  const supabaseClient =
+    window.supabase.createClient(
+      SUPABASE_URL,
+      SUPABASE_KEY
+    );
+
+
+  async function loadArticles() {
+
+    const {
+      data,
+      error
+    } = await supabaseClient
+      .from("articles")
+      .select("*")
+      .order("created_at", {
+        ascending: false
+      });
+
+    if (error) {
+
+      document.getElementById("dynamicArticles").innerHTML =
+        "<p>Articles load করতে সমস্যা হয়েছে।</p>";
+
+      console.error(error);
+
+      return;
+    }
+
+
+    const latest =
+      document.getElementById("dynamicArticles");
+
+    if (!data || data.length === 0) {
+
+      latest.innerHTML =
+        "<p>এখনো কোনো Article প্রকাশ করা হয়নি।</p>";
+
+      return;
+    }
+
+
+    latest.innerHTML = "";
+
+    data.forEach(article => {
+
+      latest.innerHTML += createArticleCard(article);
+
+    });
+
+
+    loadCategoryArticles(
+      data,
+      "Recent Events",
+      "recentEventsArticles"
+    );
+
+    loadCategoryArticles(
+      data,
+      "News",
+      "newsArticles"
+    );
+
+    loadCategoryArticles(
+      data,
+      "Technology",
+      "technologyArticles"
+    );
+
+    loadCategoryArticles(
+      data,
+      "AI",
+      "aiArticles"
+    );
+
+    loadCategoryArticles(
+      data,
+      "Islamic",
+      "islamicArticles"
+    );
+
+    loadCategoryArticles(
+      data,
+      "English",
+      "englishArticles"
+    );
+
+    loadCategoryArticles(
+      data,
+      "Motivation",
+      "motivationArticles"
+    );
+
+    loadCategoryArticles(
+      data,
+      "Health",
+      "healthArticles"
+    );
+
+    loadCategoryArticles(
+      data,
+      "Learning",
+      "learningArticles"
+    );
+
+    loadCategoryArticles(
+      data,
+      "Knowledge",
+      "knowledgeArticles"
+    );
+
+    loadCategoryArticles(
+      data,
+      "Sports",
+      "sportsArticles"
+    );
+
+    loadCategoryArticles(
+      data,
+      "Entertainment",
+      "entertainmentArticles"
+    );
+
+  }
+
+
+  function createArticleCard(article) {
+
+    const date =
+      new Date(article.created_at)
+      .toLocaleDateString(
+        "en-GB"
+      );
+
+    let image = "";
+
+    if (article.image_url) {
+
+      image =
+        `<img src="${article.image_url}" alt="${escapeHTML(article.title)}">`;
+
+    }
+
+
+    return `
+
+      <div class="article-card">
+
+        ${image}
 
         <span class="category-label">
-          Health & Food
+          ${escapeHTML(article.category || "News")}
         </span>
 
-
         <h3>
-          সুস্থ থাকতে খাবারের প্লেটে রাখুন বৈচিত্র্য
+          ${escapeHTML(article.title)}
         </h3>
 
-
-        <div class="date">
-          20 September 2026
-        </div>
-
-
-        <p>
-          সুস্থ জীবনযাপনের জন্য শুধু পেট ভরে খাওয়াই
-          যথেষ্ট নয়; খাবারে থাকতে হবে প্রয়োজনীয়
-          ভিটামিন, মিনারেল, প্রোটিন ও অন্যান্য
-          পুষ্টি উপাদানের বৈচিত্র্য।
+        <p class="date">
+          Published: ${date}
         </p>
 
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =========================
-       SUPABASE ARTICLES
-  ========================== -->
-
-  <section class="section">
-
-    <h2>📰 Latest Articles</h2>
-
-    <div
-      id="dynamicArticles"
-      class="article-grid"
-    >
-
-      <div class="loading">
-        Loading articles...
-      </div>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =========================
-       TECHNOLOGY
-  ========================== -->
-
-  <section class="section" id="technology">
-
-    <h2>💻 Technology</h2>
-
-
-    <div class="content-box">
-
-      <h3>
-        Technology and the Modern World
-      </h3>
-
-      <p>
-        প্রযুক্তি আমাদের দৈনন্দিন জীবন, শিক্ষা,
-        ব্যবসা ও কাজের ধরনকে দ্রুত পরিবর্তন করছে।
-        নতুন প্রযুক্তি সম্পর্কে জানা এবং প্রয়োজনীয়
-        digital skills তৈরি করা ভবিষ্যতের জন্য
-        গুরুত্বপূর্ণ।
-      </p>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =========================
-       AI
-  ========================== -->
-
-  <section class="section" id="ai">
-
-    <h2>🤖 AI & Future</h2>
-
-
-    <div class="content-box">
-
-      <h3>
-        Artificial Intelligence
-      </h3>
-
-      <p>
-        Artificial Intelligence বা AI বর্তমানে
-        শিক্ষা, ব্যবসা, গবেষণা, software development,
-        content creation এবং বিভিন্ন পেশায় ব্যবহৃত
-        হচ্ছে। AI সম্পর্কে শেখার পাশাপাশি এর
-        responsible use এবং তথ্য যাচাই করাও গুরুত্বপূর্ণ।
-      </p>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =========================
-       ISLAMIC
-  ========================== -->
-
-  <section class="section" id="islamic">
-
-    <h2>☪️ Islamic Learning</h2>
-
-
-    <div class="content-box">
-
-      <h3>
-        ইসলামিক জ্ঞান
-      </h3>
-
-      <p>
-        কুরআন, হাদিস, ইসলামের ইতিহাস, নৈতিকতা,
-        দোয়া এবং দৈনন্দিন জীবনের ইসলামিক শিক্ষা
-        সম্পর্কে সহজ ভাষায় শেখার একটি জায়গা।
-      </p>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =========================
-       ENGLISH
-  ========================== -->
-
-  <section class="section" id="english">
-
-    <h2>📚 English Learning</h2>
-
-
-    <div class="content-box">
-
-      <h3>
-        Learn English Every Day
-      </h3>
-
-      <p>
-        প্রতিদিন কিছু নতুন English vocabulary,
-        useful expressions, grammar এবং speaking
-        practice শেখার মাধ্যমে ধীরে ধীরে English
-        communication skill উন্নত করা যায়।
-      </p>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =========================
-       MOTIVATION
-  ========================== -->
-
-  <section class="section" id="motivation">
-
-    <h2>🌱 Motivation</h2>
-
-
-    <div class="content-box">
-
-      <h3>
-        Keep Learning, Keep Growing
-      </h3>
-
-      <p>
-        জীবনে পরিবর্তন একদিনে আসে না। ছোট ছোট
-        ভালো অভ্যাস, নিয়মিত শেখা এবং নিজের ভুল
-        থেকে শিক্ষা নেওয়ার মাধ্যমে ধীরে ধীরে
-        সামনে এগিয়ে যাওয়া সম্ভব।
-      </p>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =========================
-       HEALTH
-  ========================== -->
-
-  <section class="section" id="health">
-
-    <h2>🥗 Health & Food</h2>
-
-
-    <div class="content-box">
-
-      <h3>
-        Healthy Lifestyle
-      </h3>
-
-      <p>
-        সুস্থ থাকার জন্য balanced diet, পর্যাপ্ত
-        পানি, নিয়মিত physical activity, পর্যাপ্ত
-        ঘুম এবং স্বাস্থ্যকর জীবনযাপনের অভ্যাস
-        গুরুত্বপূর্ণ।
-      </p>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =========================
-       LEARNING
-  ========================== -->
-
-  <section class="section" id="learning">
-
-    <h2>🎓 Learning & Skills</h2>
-
-
-    <div class="content-box">
-
-      <h3>
-        Build Useful Skills
-      </h3>
-
-      <p>
-        Computer skills, Excel, data entry, English,
-        communication, digital tools এবং অন্যান্য
-        practical skills শেখা career development-এ
-        সহায়ক হতে পারে।
-      </p>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =========================
-       KNOWLEDGE
-  ========================== -->
-
-  <section class="section" id="knowledge">
-
-    <h2>💡 Knowledge</h2>
-
-
-    <div class="content-box">
-
-      <h3>
-        Learn Something New
-      </h3>
-
-      <p>
-        পৃথিবী, বিজ্ঞান, ইতিহাস, technology,
-        environment এবং দৈনন্দিন জীবনের বিভিন্ন
-        বিষয় সম্পর্কে জানার মাধ্যমে আমাদের
-        knowledge ও perspective আরও সমৃদ্ধ হতে পারে।
-      </p>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =========================
-       CONTACT
-  ========================== -->
-
-  <section class="section" id="contact">
-
-    <h2>📞 Contact</h2>
-
-
-    <div class="contact-info">
-
-      <div class="contact-card">
-
-        <strong>Name</strong>
-
         <p>
-          Ariful Haque Chowdhury
+          ${escapeHTML(
+            article.content.substring(0, 180)
+          )}...
         </p>
 
-      </div>
-
-
-      <div class="contact-card">
-
-        <strong>Phone</strong>
-
-        <p>
-          +8801796321207
-        </p>
+        <button
+          class="read-more"
+          onclick='openArticle(${JSON.stringify(article)})'>
+          Read More
+        </button>
 
       </div>
 
+    `;
 
-      <div class="contact-card">
-
-        <strong>Email</strong>
-
-        <p>
-          arifulhaquechowdhurytanvir@gmail.com
-        </p>
-
-      </div>
+  }
 
 
-      <div class="contact-card">
+  function loadCategoryArticles(
+    articles,
+    category,
+    elementId
+  ) {
 
-        <strong>Address</strong>
+    const container =
+      document.getElementById(elementId);
 
-        <p>
-          Fadrakhala, Bahubal, Ramsree-3301,
-          Habiganj
-        </p>
-
-      </div>
-
-    </div>
-
-  </section>
+    if (!container) return;
 
 
-
-  <!-- =========================
-       FOOTER
-  ========================== -->
-
-  <footer>
-
-    <p>
-      © 2026 Learn • Know • Grow
-    </p>
-
-    <p>
-      Created & Curated by
-      Ariful Haque Chowdhury
-    </p>
-
-  </footer>
-
-
-
-  <!-- BACK TO TOP -->
-
-  <button
-    id="topBtn"
-    onclick="topFunction()"
-  >
-    ↑
-  </button>
-
-
-
-  <!-- =========================
-       JAVASCRIPT
-  ========================== -->
-
-  <script>
-
-
-    /* =========================
-       SUPABASE CONFIGURATION
-    ========================== */
-
-    const SUPABASE_URL =
-      "https://evagottazckdehlurgvh.supabase.co";
-
-
-    const SUPABASE_KEY =
-      "sb_publishable_A2n8sQKfBQzQWClQyZzufQ_EM_LCBVQ";
-
-
-    const supabaseClient =
-      window.supabase.createClient(
-        SUPABASE_URL,
-        SUPABASE_KEY
+    const filtered =
+      articles.filter(
+        article =>
+          article.category === category
       );
 
 
+    if (filtered.length === 0) {
 
-    /* =========================
-       MOBILE MENU
-    ========================== */
+      container.innerHTML =
+        "<p>এই category-তে এখনো কোনো article প্রকাশ করা হয়নি।</p>";
 
-    function toggleMenu() {
-
-      const menu =
-        document.getElementById("navMenu");
-
-      menu.classList.toggle("show");
-
+      return;
     }
 
 
+    container.innerHTML = "";
 
-    /* =========================
-       LOAD ARTICLES
-    ========================== */
+    filtered.forEach(article => {
 
-    async function loadArticles() {
+      container.innerHTML +=
+        createArticleCard(article);
 
-      const container =
-        document.getElementById(
-          "dynamicArticles"
-        );
+    });
 
-
-      try {
-
-        const { data, error } =
-          await supabaseClient
-          .from("articles")
-          .select("*")
-          .order("created_at", {
-            ascending: false
-          });
+  }
 
 
-        if (error) {
+  function openArticle(article) {
 
-          console.error(
-            "Supabase error:",
-            error
-          );
+    const modal =
+      document.getElementById("articleModal");
 
-          container.innerHTML = `
-            <div class="no-article">
-              Articles load করা যাচ্ছে না।
-            </div>
-          `;
-
-          return;
-
-        }
+    const content =
+      document.getElementById("modalContent");
 
 
-        if (!data || data.length === 0) {
-
-          container.innerHTML = `
-            <div class="no-article">
-              এখনো কোনো নতুন article publish করা হয়নি।
-            </div>
-          `;
-
-          return;
-
-        }
+    const image =
+      article.image_url
+      ? `<img src="${article.image_url}"
+              style="width:100%;border-radius:10px;margin-bottom:15px;">`
+      : "";
 
 
-        container.innerHTML = "";
+    content.innerHTML = `
+
+      ${image}
+
+      <span class="category-label">
+        ${escapeHTML(article.category || "News")}
+      </span>
+
+      <h2>
+        ${escapeHTML(article.title)}
+      </h2>
+
+      <p class="date">
+        ${new Date(article.created_at).toLocaleDateString("en-GB")}
+      </p>
+
+      <p>
+        ${escapeHTML(article.content).replace(/\n/g, "<br>")}
+      </p>
+
+    `;
 
 
-        data.forEach(article => {
+    modal.style.display = "block";
 
-          const card =
-            document.createElement("article");
-
-          card.className =
-            "article-card";
+  }
 
 
-          let imageHTML = "";
+  function closeModal() {
+
+    document.getElementById(
+      "articleModal"
+    ).style.display = "none";
+
+  }
 
 
-          if (
-            article.image_url &&
-            article.image_url.trim() !== ""
-          ) {
+  window.onclick = function(event) {
 
-            imageHTML = `
-              <img
-                src="${escapeHTML(article.image_url)}"
-                alt="${escapeHTML(article.title)}"
-                onerror="this.style.display='none'"
-              >
-            `;
+    const modal =
+      document.getElementById("articleModal");
 
-          }
+    if (event.target === modal) {
 
-
-          const date =
-            article.created_at
-            ? new Date(
-                article.created_at
-              ).toLocaleDateString(
-                "en-GB",
-                {
-                  day: "2-digit",
-                  month: "long",
-                  year: "numeric"
-                }
-              )
-            : "";
-
-
-          const content =
-            article.content || "";
-
-
-          let shortContent =
-            content;
-
-
-          if (content.length > 250) {
-
-            shortContent =
-              content.substring(0, 250)
-              + "...";
-
-          }
-
-
-          card.innerHTML = `
-
-            ${imageHTML}
-
-            <div class="article-content">
-
-              <span class="category-label">
-                ${escapeHTML(
-                  article.category || "Article"
-                )}
-              </span>
-
-              <h3>
-                ${escapeHTML(
-                  article.title
-                )}
-              </h3>
-
-              <div class="date">
-                ${date}
-              </div>
-
-              <p>
-                ${escapeHTML(
-                  shortContent
-                )}
-              </p>
-
-              ${
-                content.length > 250
-                ? `
-                  <a
-                    href="#"
-                    class="read-more"
-                    onclick="showFullArticle(event, '${article.id}')"
-                  >
-                    Read More →
-                  </a>
-                `
-                : ""
-              }
-
-            </div>
-
-          `;
-
-
-          container.appendChild(card);
-
-        });
-
-      }
-
-      catch (error) {
-
-        console.error(error);
-
-        container.innerHTML = `
-          <div class="no-article">
-            Something went wrong while loading articles.
-          </div>
-        `;
-
-      }
+      modal.style.display = "none";
 
     }
 
+  };
 
 
-    /* =========================
-       READ MORE
-    ========================== */
+  function escapeHTML(text) {
 
-    async function showFullArticle(
-      event,
-      articleId
+    if (!text) return "";
+
+    return text
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+
+  }
+
+
+  window.onscroll = function() {
+
+    const button =
+      document.getElementById("topBtn");
+
+    if (
+      document.body.scrollTop > 300 ||
+      document.documentElement.scrollTop > 300
     ) {
 
-      event.preventDefault();
+      button.style.display = "block";
 
+    } else {
 
-      const { data, error } =
-        await supabaseClient
-        .from("articles")
-        .select("*")
-        .eq("id", articleId)
-        .single();
-
-
-      if (error || !data) {
-
-        alert(
-          "Article পাওয়া যাচ্ছে না।"
-        );
-
-        return;
-
-      }
-
-
-      const modal =
-        document.createElement("div");
-
-
-      modal.style.position = "fixed";
-      modal.style.left = "0";
-      modal.style.top = "0";
-      modal.style.width = "100%";
-      modal.style.height = "100%";
-      modal.style.background =
-        "rgba(0,0,0,0.75)";
-      modal.style.zIndex = "9999";
-      modal.style.overflowY = "auto";
-      modal.style.padding = "30px 15px";
-
-
-      const box =
-        document.createElement("div");
-
-
-      box.style.maxWidth = "850px";
-      box.style.margin = "auto";
-      box.style.background = "white";
-      box.style.borderRadius = "15px";
-      box.style.padding = "25px";
-
-
-      const date =
-        data.created_at
-        ? new Date(
-            data.created_at
-          ).toLocaleDateString(
-            "en-GB",
-            {
-              day: "2-digit",
-              month: "long",
-              year: "numeric"
-            }
-          )
-        : "";
-
-
-      box.innerHTML = `
-
-        <button
-          onclick="this.closest('.article-modal').remove()"
-          style="
-            float:right;
-            background:#c62828;
-            color:white;
-            border:none;
-            padding:8px 14px;
-            border-radius:6px;
-            cursor:pointer;
-          "
-        >
-          Close
-        </button>
-
-
-        ${
-          data.image_url
-          ? `
-            <img
-              src="${escapeHTML(
-                data.image_url
-              )}"
-              style="
-                width:100%;
-                max-height:400px;
-                object-fit:cover;
-                border-radius:10px;
-                margin-bottom:20px;
-              "
-            >
-          `
-          : ""
-        }
-
-
-        <span class="category-label">
-          ${escapeHTML(
-            data.category || "Article"
-          )}
-        </span>
-
-
-        <h2
-          style="
-            color:#062d5c;
-            margin-top:10px;
-          "
-        >
-          ${escapeHTML(data.title)}
-        </h2>
-
-
-        <div
-          style="
-            color:#777;
-            margin-bottom:20px;
-          "
-        >
-          ${date}
-        </div>
-
-
-        <div
-          style="
-            white-space:pre-line;
-            line-height:1.9;
-          "
-        >
-          ${escapeHTML(data.content)}
-        </div>
-
-      `;
-
-
-      modal.className =
-        "article-modal";
-
-
-      modal.appendChild(box);
-
-
-      document.body.appendChild(modal);
+      button.style.display = "none";
 
     }
 
+  };
 
 
-    /* =========================
-       ESCAPE HTML
-    ========================== */
+  loadArticles();
 
-    function escapeHTML(text) {
-
-      const div =
-        document.createElement("div");
-
-      div.textContent =
-        text || "";
-
-      return div.innerHTML;
-
-    }
-
-
-
-    /* =========================
-       BACK TO TOP
-    ========================== */
-
-    window.onscroll =
-      function() {
-
-        const button =
-          document.getElementById(
-            "topBtn"
-          );
-
-
-        if (
-          document.body.scrollTop > 300 ||
-          document.documentElement.scrollTop > 300
-        ) {
-
-          button.style.display =
-            "block";
-
-        }
-
-        else {
-
-          button.style.display =
-            "none";
-
-        }
-
-      };
-
-
-
-    function topFunction() {
-
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
-
-    }
-
-
-
-    /* =========================
-       START
-    ========================== */
-
-    loadArticles();
-
-
-  </script>
-
+</script>
 
 </body>
-
 </html>
